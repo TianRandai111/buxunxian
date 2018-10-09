@@ -1,9 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"time"
 )
 
 func main() {
-	fmt.Println("hello wlord")
+	for i := 0; i < 100; i++ {
+		go test_print(i)
+	}
+	time.Sleep(time.Second)
 }
