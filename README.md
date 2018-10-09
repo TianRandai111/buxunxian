@@ -16,3 +16,6 @@ func main() {
     go fmt.Println("hello")
 }
 ```
+
+- 3.高并发测试
+    file:///001/testgo.go
