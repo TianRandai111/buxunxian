@@ -27,18 +27,27 @@ func main() {
 ### 第一个golang程序
 - 1.hello world代码位置(001\LivingExample-2\hello.go)
 
+<<<<<<< HEAD
 - 2.channel
     - a.管道.类似unix/linux中的pipe
     - b.多个goroute之间通过channel进行通信
     - c.支持任何类型
     > 如果管道存放的值数量，多于定义的长度会造成死锁，导致程序无法运行
 
+=======
+- 3.channel
+    - a.管道.类似unix/linux中的pipe
+    - b.多个goroute之间通过channel进行通信
+    - c.支持任何类型
+    > 如果管道存放的值数量，多余定义的长度会造成死锁，导致程序无法运行
+>>>>>>> 6499ae207380f459bc685af460fa949f39a77537
     代码位置(001\LivingExample-3\pipe.go)
     ```go
         pipe := make (chan int,3) //初始化一个chan，类型为整形，长度为3。
         pipe <- 1 //将1放到pipe里
         pipe <- 2 //将2放到pipe里
     ```
+<<<<<<< HEAD
 ![image](le-3)
 - 3.返回值
    代码位置buxunxian\001\LivingExample-4\return.go
@@ -55,3 +64,10 @@ func main() {
 - 1.
 >代码位置\buxunxian\Day1\LivingExample-5，编译二进制文件
 ``go build -o bin\calc_test.exe  .\main\main.go``
+=======
+   
+![image](le-3)
+
+
+
+>>>>>>> 6499ae207380f459bc685af460fa949f39a77537
