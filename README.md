@@ -55,3 +55,6 @@ func main() {
 - 1.
 >代码位置\buxunxian\Day1\LivingExample-5，编译二进制文件
 ``go build -o bin\calc_test.exe  .\main\main.go``
+
+- 2.多进程的goroute运算测试，
+>代码位置\buxunxian\Day1\LivingExample-6
