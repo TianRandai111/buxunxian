@@ -80,6 +80,7 @@ func main() {
     ``a. boy``  ``b. Boy`` ``c. a+b(错误实例)`` ``d. 0boy(错误实例)`` ``e._boy`` ``f. =_boy(错误实例)`` ``g. _``
     - 3._是特殊标识符，用来忽略结果
     - 4.保留关键字
+
     |||||
     |-|-|-|-|
     |break|default|func|interface|select|
@@ -87,6 +88,7 @@ func main() {
     |chan|else|goto|package|switch|
     |const|fallthough|if|range|type|
     |continue|for|import|return|var|
+    
 - <a id=D2-2>Go程序基本结构</a>
 - <a id=D2-3>常量和变量</a>
 - <a id=D2-4>数据类型和操作符</a>
