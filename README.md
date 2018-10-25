@@ -43,7 +43,7 @@ func main() {
     ```
 ![image](le-3)
 - 3.返回值
-   代码位置buxunxian\001\LivingExample-4\return.go
+   代码位置Day1\LivingExample-4\return.go
 
 
 ### 包的概念
@@ -55,11 +55,11 @@ func main() {
 
 ### 包的实战
 - 1.
->代码位置\buxunxian\Day1\LivingExample-5，编译二进制文件
+>代码位置Day1\LivingExample-5，编译二进制文件
 ``go build -o bin\calc_test.exe  .\main\main.go``
 
 - 2.多进程的goroute运算测试，
->代码位置\buxunxian\Day1\LivingExample-6
+>代码位置Day1\LivingExample-6
 
 作业：使用fmt,打印浮点数，二进制，十进制，十六进制
 
@@ -77,6 +77,7 @@ func main() {
 - <a id=D2-1>文件名&关键字&标识符</a>
     - 1.所有go源码以.go结尾
     - 2.标识符以字母或下划线开头，大小写铭感例如
+
     ``a. boy``  ``b. Boy`` ``c. a+b(错误实例)`` ``d. 0boy(错误实例)`` ``e._boy`` ``f. =_boy(错误实例)`` ``g. _``
     - 3._是特殊标识符，用来忽略结果
     - 4.保留关键字
@@ -88,9 +89,43 @@ func main() {
     |chan|else|goto|package|switch|
     |const|fallthough|if|range|type|
     |continue|for|import|return|var|
-    
+
 - <a id=D2-2>Go程序基本结构</a>
+    ```go
+    pacakge main 
+
+    
+    import(
+        "fmt"
+    )
+    //main函数是程序入口
+    func main() {
+        fmt.Println("hello,world")
+    }
+    ```
+    >练习1.写一个程序，对于给定一个数字n,求出所有亮亮相家等于,的组合。比如：对于n=3,所有的组合如下所示
+    
+    ```
+    0+3=3
+    1+2=3
+    2+1=3
+    0+3=3
+    ```
+
+    >代码位置Day2\LivingExample-1\main.go
+    
+    >练习2.一个程序包包含两个包add和main,其中add包中有两个变量，Name和age。请问main包中是如何访问Name和Age的(大写的为公有，小写为私有)
+
+    >代码位置Day2\LivingExample-2
+
+    >练习3.包别名的应用,开发一个程序，使用包别名来访问包中的函数
+
+    >代码位置Day2\LivingExample-3\main
+
+    >练习4.每个源文件都可以包含一个init函数，这个init函数自动被go运行框架调用。开发一个演示这个功能
+
+    >代码示例Day2\LivingExample-4\add\add.go
+
 - <a id=D2-3>常量和变量</a>
 - <a id=D2-4>数据类型和操作符</a>
 - <a id=D2-5>字符串类型</a>
-
