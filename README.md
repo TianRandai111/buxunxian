@@ -1,9 +1,11 @@
 # buxunxian
-<a href=#1>001golang语言基础</a>
+<a href=#1>Day-1 golang语言基础</a>
+<a href=#2>Day-2 golang语言基础</a>
 
-<a href=#2>002golang语言基础</a>
+<a href=#3333>Day-1 golang语言基础</a>
+<a id=3333>Day-1笔记</a>
 
-## <a id=1>001笔记</a>
+## <a id=1>Day-1笔记</a>
 ### Golang语言的特性
 - 1.垃圾回收
     - a.内存自动回收，再也不需要开发人员管理内存
@@ -58,3 +60,35 @@ func main() {
 
 - 2.多进程的goroute运算测试，
 >代码位置\buxunxian\Day1\LivingExample-6
+
+作业：使用fmt,打印浮点数，二进制，十进制，十六进制
+
+## <a id=2>Day-2笔记</a>
+
+### 第一部分：基本数据类型和操作符
+
+- <a href=#D2-1>文件名&关键字&标识符</a>
+- <a href=#D2-2>Go程序基本结构</a>
+- <a href=#D2-3>常量和变量</a>
+- <a href=#D2-4>数据类型和操作符</a>.
+
+- <a href=#D2-5>字符串类型</a>
+
+- <a id=D2-1>文件名&关键字&标识符</a>
+    - 1.所有go源码以.go结尾
+    - 2.标识符以字母或下划线开头，大小写铭感例如
+    ``a. boy``  ``b. Boy`` ``c. a+b(错误实例)`` ``d. 0boy(错误实例)`` ``e._boy`` ``f. =_boy(错误实例)`` ``g. _``
+    - 3._是特殊标识符，用来忽略结果
+    - 4.保留关键字
+    |||||
+    |-|-|-|-|
+    |break|default|func|interface|select|
+    |case|defer|go|map|struct|
+    |chan|else|goto|package|switch|
+    |const|fallthough|if|range|type|
+    |continue|for|import|return|var|
+- <a id=D2-2>Go程序基本结构</a>
+- <a id=D2-3>常量和变量</a>
+- <a id=D2-4>数据类型和操作符</a>
+- <a id=D2-5>字符串类型</a>
+
