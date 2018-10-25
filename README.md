@@ -1,8 +1,10 @@
 # buxunxian
 <a href=#1>Day-1 golang语言基础</a>
+
 <a href=#2>Day-2 golang语言基础</a>
 
 <a href=#3333>Day-1 golang语言基础</a>
+
 <a id=3333>Day-1笔记</a>
 
 ## <a id=1>Day-1笔记</a>
@@ -67,14 +69,13 @@ func main() {
 
 ### 第一部分：基本数据类型和操作符
 
-- <a href=#D2-1>文件名&关键字&标识符</a>
-- <a href=#D2-2>Go程序基本结构</a>
-- <a href=#D2-3>常量和变量</a>
-- <a href=#D2-4>数据类型和操作符</a>.
+- <a href=#2-1>文件名&关键字&标识符</a>
+- <a href=#2-2>Go程序基本结构</a>
+- <a href=#2-3>常量和变量</a>
+- <a href=#2-4>数据类型和操作符</a>.
+- <a href=#2-5>字符串类型</a>
 
-- <a href=#D2-5>字符串类型</a>
-
-- <a id=D2-1>文件名&关键字&标识符</a>
+- <a id=2-1>文件名&关键字&标识符</a>
     - 1.所有go源码以.go结尾
     - 2.标识符以字母或下划线开头，大小写铭感例如
 
@@ -90,7 +91,7 @@ func main() {
     |const|fallthough|if|range|type|
     |continue|for|import|return|var|
 
-- <a id=D2-2>Go程序基本结构</a>
+- <a id=2-2>Go程序基本结构</a>
     ```go
     pacakge main 
 
@@ -126,6 +127,6 @@ func main() {
 
     >代码示例Day2\LivingExample-4\add\add.go
 
-- <a id=D2-3>常量和变量</a>
-- <a id=D2-4>数据类型和操作符</a>
-- <a id=D2-5>字符串类型</a>
+- <a id=2-3>常量和变量</a>
+- <a id=2-4>数据类型和操作符</a>
+- <a id=2-5>字符串类型</a>
