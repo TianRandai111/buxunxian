@@ -1,10 +1,8 @@
-.# buxunxian
-
 <a href=#1>Day-1 golang语言基础</a>
 
-<a href=#2>Day-2 golang语言基础</a>
+<a href=#2>Day-2 数据类型与操作符</a>
 
-<a href=#3>Day-3 基础数据类型和操作符</a>
+<a href=#3>Day-3 Outline</a>
 
 <a href=#3333>Day-1 golang语言基础</a>
 
@@ -267,6 +265,7 @@ func main() {
     - 2.应用类型：变量存储的是一个地址，这个地址存储最终的值。内存通常在对战分配，通过GC回收
         - a.引用类型：指针、slice、map、chan等都是引用类型。
     > go语言交换值独有的方式``Day2\LivingExample-9\main\main.go``
+
 - <a id=2-4>数据类型和操作符</a>
 - 1.bool类型，只能存true和false
     ```go
@@ -300,12 +299,77 @@ func main() {
 - 作业：
     - 判断101和200之间有多少个素数，并输出所有的素数
     >代码位置：Day2\Assignment\PrimeNumber\main.go
+
     - 打印出100-999中所有的“水仙花数，所谓的水仙花数是一个三位数，其中苏子的立方和等于该数恩深，例如153是一个水仙花数，因为153=1的三次方+5的三次方+3的三次方
-    >代码位置：
+    >代码位置：Day2\Assignment\PPDI\main.go
+
+    >代码位置：Day2\Assignment\ASCII\main.go(使用ASCII码来表示)
+
     - 对于一个数n,求n的阶乘之和：，既：1！+2！+3！+...n
     >代码位置：
+
     - 变量赋值的区别
     >代码位置：Day2\Assignment\main.go
 
 
-## <a id=3>基本数据类型和操作符</a>
+## <a id=3>Outline</a>
+
+- <a href=#3-1>1. strings和strconv的使用</a>
+- <a href=#3-2>2. Go中的时间和日期类型</a>
+- <a href=#3-3>3. 流程控制</a>
+- <a href=#3-4>4. 函数详解</a>
+- <a href=#3-5>5. 课后作业</a>
+
+
+
+- <a id=3-1>1. strings和strconv的使用</a> 
+    - 1.1. strings.HasPrefix(s string, prefix string) bool：判断字符串s是否以prefix开头
+    >练习1：判断一个url是否以http://开头，如果不是，则加上http://。
+
+    >代码位置：Day3\LivingExample-1\main.go
+
+    - 1.2. strings.HasSuffix(s string, suffix string) bool：判断字符串s是否以suffix结尾。
+    >练习2：判断一个路径是否以“/”结尾，如果不是，则加上/。
+
+    >代码位置：Day3\LivingExample-2\main.go
+
+    - 1.3. strings.Index(s string, str string) int：判断str在s中首次出现的位置，如果没有出现，则返回-1
+    >代码位置：Day3\LivingExample-3\main.go
+
+    - 1.4. strings.LastIndex(s string, str string) int：判断str在s中最后出现的位置，如果没有出现，则返回-1
+    >代码位置：Day3\LivingExample-4\main.go
+
+    >练习3：写一个函数返回一个字符串在另一个字符串的首次出现和最后出现位置func StrIndex(str string, substr string)(int, int){}
+
+    - 1.5. strings.Replace(str string, old string, new string, n int)：字符串替换
+    - 1.6. strings.Count(str string, substr string)int：字符串计数
+    - 1.7. strings.Repeat(str string, count int)string：重复count次str
+    - 1.8. strings.ToLower(str string)string：转为小写
+    - 1.9. strings.ToUpper(str string)string：转为大写
+    >练习4：写一个函数分别演示Replace、Count、Repeat、ToLower、ToUpper的用法
+
+    >代码位置：
+
+    - 1.10. strings.TrimSpace(str string)：去掉字符串首尾空白字符
+        - 1.10.1. strings.Trim(str string, cut string)：去掉字符串首尾cut字符
+        - 1.10.2. strings.TrimLeft(str string, cut string)：去掉字符串首cut字符
+        - 1.10.3. strings.TrimRight(str string, cut string)：去掉字符串首cut字符
+    - 1.11. strings.Field(str string)：返回str空格分隔的所有子串的slice
+        - 1.11.1. strings.Split(str string, split string)：返回str split分隔的所有子串的slice
+    - 1.12. strings.Join(s1 []string, sep string)：用sep把s1中的所有元素链接起来
+    >练习5：写一个函数分别演示TrimSpace、Trim、TrimLeft、TrimRight、Field、Split、以及Join的用法
+
+    >代码位置：
+
+    - 1.13. strings.Itoa(i int)：把一个整数i转成字符串
+    - 1.14. strings.Atoi(str string)(int, error)：把一个字符串转成整数
+    >练习6：写一个函数分别演示Itoa、Atoi的用法
+    
+    >代码位置：
+
+- <a id=3-2>2. Go中的时间和日期类型</a>
+- <a id=3-3>3. 流程控制</a>
+- <a id=3-4>4. 函数详解</a>
+- <a id=3-5>5. 课后作业</a>
+
+

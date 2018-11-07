@@ -13,6 +13,8 @@ func Ppdi(str string) {
 		num := int(str[i] - '0')
 		result += (num * num * num)
 	}
+
+	//字符串转换成整数
 	number, err := strconv.Atoi(str)
 	if err != nil {
 		fmt.Printf("com net convert %s to int\n", str)
