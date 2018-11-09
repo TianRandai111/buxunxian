@@ -385,6 +385,17 @@ func main() {
     >[代码位置: Day3/LivingExample-7/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-7/main.go)
 
 - <a id=3-2>2. Go中的时间和日期类型</a>
+    - 2.1 time包
+    - 2.2 time.{Time类型}，用来表示时间
+    - 2.3 获取当前时间``now := time.Now()``(通过这个参数可以获取以下的值)
+    - 2.4 通过这个上面参数可以获取以下的值
+        - 2.3.1 ``time.Now().Day()``
+        - 2.3.2 ``time.Now().Minute()``
+        - 2.3.3 ``time.Now().Month()``
+        - 2.3.4 ``time.Now().Year()``
+    - 2.5 格式化输出,``fmt.Printf("%02d/%02d/%02d %02d:%02d:%02d",now.Year()''')``
+    >[代码位置: Day3\LivingExample-8\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-8\main.go)
+    
 - <a id=3-3>3. 流程控制</a>
 - <a id=3-4>4. 函数详解</a>
 - <a id=3-5>5. 课后作业</a>
