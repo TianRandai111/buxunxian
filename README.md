@@ -4,7 +4,7 @@
 
 <a href=#3>Day-3 字符串处理包与函数</a>
 
-<a href=#4>Day-1 数组、切片、map、package介绍</a>
+<a href=#4>Day-4 数组、切片、map、package介绍</a>
 
 
 <a href=#3333>Day-1 golang语言基础</a>
@@ -29,7 +29,7 @@ func main() {
 }
 ```
 
-**重点GOPATH：环境变量 GOPATH 的值可以是一个目录的路径，也可以包含多个目录路径，每个目录都代表 Go 语言的一个工作区（workspace）。这些工作区用于放置 Go 语言的源码文件（source file），以及安装（install）后的归档文件（archive file，也就是以“.a”为扩展名的文件）和可执行文件（executable file）。**
+**重点GOPATH：环境变量 GOPATH 的值可以是一个目录的路径，也可以包含多个目录路径，每个目录都代表 Go 语言的一个工作区（workspace）。这些工作区用于放置 Go 语言的源码文件（source file），以及安装（install）后的归档文件（archive file，也就是以".a"为扩展名的文件）和可执行文件（executable file）。**
 
 ### 高并发测试(一个测试)
 - 1.[代码位置: ](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-1/LivingExample-1/testgo.go)
@@ -322,7 +322,7 @@ func main() {
     - 判断101和200之间有多少个素数，并输出所有的素数
     >[代码位置: Day2/Assignment/PrimeNumber/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/Assignment/PrimeNumber/main.go)
 
-    - 打印出100-999中所有的“水仙花数，所谓的水仙花数是一个三位数，其中苏子的立方和等于该数恩深，例如153是一个水仙花数，因为153=1的三次方+5的三次方+3的三次方
+    - 打印出100-999中所有的"水仙花数，所谓的水仙花数是一个三位数，其中苏子的立方和等于该数恩深，例如153是一个水仙花数，因为153=1的三次方+5的三次方+3的三次方
     >[代码位置: Day2/Assignment/PPDI/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/Assignment/PPDI/main.go)
 
     >[代码位置: (使用ASCII码来表示)Day2/Assignment/ASCII/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/Assignment/ASCII/main.go)
@@ -352,7 +352,7 @@ func main() {
     >[代码位置: Day3/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-1/main.go)
 
     - 1.2. strings.HasSuffix(s string, suffix string) bool：判断字符串s是否以suffix结尾。
-    >练习2：判断一个路径是否以“/”结尾，如果不是，则加上/。
+    >练习2：判断一个路径是否以"/"结尾，如果不是，则加上/。
 
     >[代码位置: Day3/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-2/main.go)
 
@@ -464,7 +464,7 @@ func main() {
 
     }
     ```
-    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 “can not convert to int”，并返回。否则输出该整数。[代码位置: Day3/LivingExample-13/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-13/main.go)
+    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 "can not convert to int"，并返回。否则输出该整数。[代码位置: Day3/LivingExample-13/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-13/main.go)
 
     - 2.switch case语句,如果使用``fallthrough``会继续向下执行[代码位置: Day3/LivingExample-14/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-14/main.go)
         ```go
@@ -480,21 +480,21 @@ func main() {
         var i = 0
         switch {
         condition1:
-            fmt.Println(“i > 0 and i < 10”)
+            fmt.Println("i > 0 and i < 10")
         condition2:
-        fmt.Println(“i > 10 and i < 20”)
+        fmt.Println("i > 10 and i < 20")
         default:
-            fmt.Println(“def”)
+            fmt.Println("def")
         }
 
         //写法3
         switch i := 0; {
         condition1:
-            fmt.Println(“i > 0 and i < 10”)
+            fmt.Println("i > 0 and i < 10")
         condition2:
-        fmt.Println(“i > 10 and i < 20”)
+        fmt.Println("i > 10 and i < 20")
         default:
-            fmt.Println(“def”)
+            fmt.Println("def")
         }
         ```
         >练习：猜数字，写一个程序，随机生成一个0到100的整数n，然后用户在终端，输入数字，如果和n相等，则提示用户猜对了。如果不相等，则提示用户，大于或小于n。[代码位置: Day3/LivingExample-15 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-15/main.go)
@@ -626,7 +626,7 @@ func main() {
             } 
         func f() {
                 for i := 0; i < 5; i++ {
-                        defer fmt.Printf(“%d “, i)
+                        defer fmt.Printf("%d ", i)
                 } 
             } 
         ```
@@ -662,17 +662,17 @@ func main() {
         ```
     
 - <a id=3-5>5. 课后作业</a>
-    - 1.编写程序，在终端输出九九乘法表。[Day3/Assignment/one/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/one/main.go)
-    - 2.一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程找出1000以内的所有完数。[Day3/Assignment/two/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/two/main.go)
-    - 3.输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。[Day3/Assignment/three/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/three/main.go)
-    - 4.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。[Day3/Assignment/four/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/four/main.go)
+    - 1.编写程序，在终端输出九九乘法表。[代码位置: Day3/Assignment/one/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/one/main.go)
+    - 2.一个数如果恰好等于它的因子之和，这个数就称为"完数"。例如6=1＋2＋3.编程找出1000以内的所有完数。[代码位置: Day3/Assignment/two/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/two/main.go)
+    - 3.输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。[代码位置: Day3/Assignment/three/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/three/main.go)
+    - 4.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。[代码位置: Day3/Assignment/four/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/four/main.go)
     - 5.计算两个大数相加的和，这两个大数会超过int64的表示范围.
-    - [自己的版本 Day3/Assignment/five/my-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/my-version/main.go)
-    - [别人的版本Day3/Assignment/five/teacher-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/teacher-version/main.go)
+    - [代码位置: 自己的版本 Day3/Assignment/five/my-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/my-version/main.go)
+    - [代码位置: 别人的版本Day3/Assignment/five/teacher-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/teacher-version/main.go)
 
   
 
-<a id=4>Day-1笔记</a>
+<a id=4>数组、切片、map、package介绍</a>
 
 <a href=#4-1>1.内置函数、递归函数、闭包</a>
 <a href=#4-2>2.数组与切片</a>
@@ -688,16 +688,44 @@ func main() {
 - 1.1. 内置函数
     - 1.1.1. close：主要用来关闭channel
     - 1.1.2. len：用来求长度，比如string、array、slice、map、channel
-    - 1.1.3. new：用来分配内存，主要用来分配值类型，比如int、struct。返回的是指针
+    - 1.1.3. new：用来分配内存，主要用来分配值类型，比如int、struct。返回的是指针[代码位置: Day4/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-1/main.go)
     - 1.1.4. make：用来分配内存，主要用来分配引用类型，比如chan、map、slice
-    - 1.1.5. append：用来追加元素到数组、slice中
-    - 1.1.6. panic和recover：用来做错误处理
-    
+    - 1.1.5. append：用来追加元素到数组、slice中[代码位置: Day4/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-2/main.go)
+    - 1.1.6. panic和recover：用来做错误处理[代码位置: Day4/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-3/main.go)
+
     >new和make的区别
 
     ![image](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Image/Image-1.png?raw=true)
 
+    [代码位置: Day4/LivingExample-4/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-4/main.go)
+
+- 1.2. 递归函数-自己调用自己
+    - 1.2.1 定义好出口条件
+    - 1.2.2 一个大问题可以分解成相似的小问题
+    - 1.2.3 数字的阶层 [代码位置: Day4/LivingExample-5/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-5/main.go)
+    - 1.2.4 斐波那契数列  [代码位置: Day4/LivingExample-6/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-6/main.go)
+
+- 1.3 闭包
+    - 1.3.1 一个函数与其相关的引用环境组合成的实体
+    - 1.3.2 闭包的函数会保存更改的状态
+    - [代码位置: Day4/LivingExample-7/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-7/main.go)
+    - [代码位置: Day4/LivingExample-8/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-8/main.go)
+
+
 <a id=4-2>2.数组与切片</a>
+
+- 2.1
+    - 2.1.1 数组：使用中数据类型的固定长度的序列。
+    - 2.1.2 数组定义：var a [len]int,比如：var a[5]int
+    - 2.1.3 长度是数组类型的一部分，因此，var a[5] int和 var a[10] int是不同的类型
+    - 2.1.4 数组可以通过下标进行访问，下标是从0开始的，最后一个元素的下标是，len-1
+    ```go
+    for i := 0;i < len(a);i++ {
+    }
+    ```
+    - 2.1.5 访问月结，如果下标在数组合法范围之外，则触发访问月结，会panic
+
+
 <a id=4-3>3.map数组结构</a>
 <a id=4-4>4.package介绍</a>
 <a id=4-5>5.课后作业</a>

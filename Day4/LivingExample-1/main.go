@@ -8,4 +8,6 @@ func main() {
 
 	j := new(int)
 	fmt.Println(j)
+	*j = 199
+	fmt.Println(*j)
 }
