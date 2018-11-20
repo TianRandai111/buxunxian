@@ -335,7 +335,8 @@ func main() {
 
 - <a href=#3-1>1. strings和strconv的使用</a>
 - <a href=#3-2>2. Go中的时间和日期类型</a>
-- <a href=#3-3>3. 流程控制</a>
+- <a href=#3-3>3. 指针类型</a>
+- <a href=#3-6>3. 流程控制</a>
 - <a href=#3-4>4. 函数详解</a>
 - <a href=#3-5>5. 课后作业</a>
 
@@ -389,15 +390,283 @@ func main() {
     - 2.2 time.{Time类型}，用来表示时间
     - 2.3 获取当前时间``now := time.Now()``(通过这个参数可以获取以下的值)
     - 2.4 通过这个上面参数可以获取以下的值
-        - 2.3.1 ``time.Now().Day()``
-        - 2.3.2 ``time.Now().Minute()``
-        - 2.3.3 ``time.Now().Month()``
-        - 2.3.4 ``time.Now().Year()``
+        - 2.4.1 ``time.Now().Day()``
+        - 2.4.2 ``time.Now().Minute()``
+        - 2.4.3 ``time.Now().Month()``
+        - 2.4.4 ``time.Now().Year()``
     - 2.5 格式化输出,``fmt.Printf("%02d/%02d/%02d %02d:%02d:%02d",now.Year()''')``
-    >[代码位置: Day3\LivingExample-8\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-8\main.go)
-    
-- <a id=3-3>3. 流程控制</a>
+        - 2.5.1 格式化输出
+        
+        ```go
+        now := time.Now()
+        fmt.Println(now.Format("02/1/2006 15:04"))
+        fmt.Println(now.Format("2006/1/02 15:04"))
+        fmt.Println(now.Format("2006/1/02"))
+        ```
+        
+        >[代码位置: Day3\LivingExample-8\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-8\main.go)
+
+    - 2.6 ``time.Duration``用来表示纳秒
+    - 2.7 常量
+
+        ```
+        const (
+            Nanosecond  Duration = 1
+            Microsecond          = 1000 * Nanosecond
+            Millisecond          = 1000 * Microsecond
+            Second               = 1000 * Millisecond
+            Minute               = 60 * Second
+            Hour                 = 60 * Minute
+        )
+        ```
+    > 练习6：写一个程序，获取当前时间，并格式化成 2017/06/15 08:05:00形式[代码位置: Day3\LivingExample-9\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-9\main.go)
+
+    > 练习7：写一个程序，统计一段代码的执行耗时，单位精确到微秒。[代码位置: Day3\LivingExample-10\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-10\main.go)
+
+- <a id=3-3>3. 指针类型</a>
+    - 1. 普通类型，变量存的就是值，也叫值类型
+    - 2. 获取变量的地址，用&，比如： var a int, 获取a的地址：&a
+    - 3. 指针类型，变量存的是一个地址，这个地址存的才是值
+    - 4. 获取指针类型所指向的值，使用：*，比如：var *p int, 使用*p获取p指向的值
+    ```go
+    var a int = 5  //a -- >5 变量a指向5
+    var p *int = &a //0xefefef -> 5 指针p指向a的地址，a地址对应的值为5
+    ```
+    >练习8：写一个程序，获取一个变量的地址，并打印到终端。[代码位置: Day3\LivingExample-11\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-11\main.go)
+
+
+    >练习9：写一个函数，传入一个int类型的指针，并在函数中修改所指向的值。在main函数中调用这个函数，并把修改前后的值打印到终端，观察结果[代码位置: Day3\LivingExample-12\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-12\main.go)
+
+- <a id=3-6>3. 流程控制</a>
+    - 1.if/else分钟判断
+    ```go
+    // no.1
+    if condition {
+
+    }
+
+    // no.2
+    if condition {
+        
+    }else {
+
+    }
+
+    // no.3 
+    if condition {
+
+    }else if condition {
+
+    }else {
+
+    }
+    ```
+    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 “can not convert to int”，并返回。否则输出该整数。[代码位置: Day3\LivingExample-13\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-13\main.go)
+
+    - 2.switch case语句,如果使用``fallthrough``会继续向下执行[代码位置: Day3\LivingExample-14\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-14\main.go)
+        ```go
+        // 写法1
+        switch var {
+            case var1,var2:
+            case var3:
+            case var4:
+            default:
+        }
+
+        //写法2
+        var i = 0
+        switch {
+        condition1:
+            fmt.Println(“i > 0 and i < 10”)
+        condition2:
+        fmt.Println(“i > 10 and i < 20”)
+        default:
+            fmt.Println(“def”)
+        }
+
+        //写法3
+        switch i := 0; {
+        condition1:
+            fmt.Println(“i > 0 and i < 10”)
+        condition2:
+        fmt.Println(“i > 10 and i < 20”)
+        default:
+            fmt.Println(“def”)
+        }
+        ```
+        >练习：猜数字，写一个程序，随机生成一个0到100的整数n，然后用户在终端，输入数字，如果和n相等，则提示用户猜对了。如果不相等，则提示用户，大于或小于n。[代码位置: Day3\LivingExample-15 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-15\main.go)
+
+    - 3.for循环
+        ```go
+        for 初始化语句;条件判断；变量修改{
+
+        }
+
+        //写法1
+        for i := 0 ;i<cont;i++{
+
+        }
+        //打印改图形
+        A
+        AA
+        AAA
+        AAAA
+        AAAAA
+        AAAAAA
+
+        //写法2
+        for 条件判断{
+
+        }
+        //eg:
+        for i>0{
+            fmt.Println("i>0")
+        }
+        for true{
+            fmt.Println("i>0")
+        }
+        for {
+            fmt.Println("i>0")
+        }
+
+        //写法3
+        str := "hello world,中国"
+        for i ,v := range str{
+            ftm.Printf("index:%d,value:%s",i,v)
+        }
+
+        //break continue的使用方法
+        //Lable语句 字符串加: 配合goto continue使用
+        
+        ```
+        >打印图形[代码位置: Day3\LivingExample-16 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-16\main.go)
+
+        >break continue的使用方法[代码位置: Day3\LivingExample-17 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-17\main.go)
+
 - <a id=3-4>4. 函数详解</a>
+    - 1.语法声明：func 函数名(参数列表) [(返回值列表)] {}
+    ```golang
+    func add(){}
+    func add(a int, b int){}
+    func add(a int, b int) int {}
+    func add(a int, b int) (int, int) {}
+    func add(a,b int) (int, int) {}
+    ```
+    - 2.golang函数特点
+        - 2.1 不支持重载，一个包不能有两个一样的函数
+        - 2.2 函数是一等公民，函数也是一种类型，函数可以复制给变量[代码位置: Day3\LivingExample-18 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-18\main.go)
+        - 2.3 匿名函数
+        - 2.4 多返回值
+    - 3.函数参数传递方式
+        - 3.1 值传递
+        - 3.2 引用传递
+    >注意1：无论是值传递，还是引用传递，传递给函数的都是变量的副本，不过，值传递是值的拷贝。引用传递是地址的拷贝，一般来说，地址拷贝更为高效。而值拷贝取决于拷贝的对象大小，对象越大，则性能越低。
+
+    >注意2：map、slice、chan、指针、interface默认以引用的方式传递。
+
+    - 4.命名返回值的名字
+    ```go
+    func add(a, b int) (c int) {
+        c = a + b
+        return
+    }
+    func calc(a, b int) (sum int, avg int) {
+            sum = a + b
+            avg = (a +b)/2
+            return
+            }
+    ```
+
+    - 5.忽略返回值
+    ```golang
+    func calc (a,b int) (sum int,avg int){
+        sum = a + b
+        avg = (a + b)/2
+        return
+    }
+    func main() {
+        sum, _ := calc(100,200)
+    }
+    ```
+
+    - 6.可变参数：
+    ```golang
+    //0个或多个参数,arg属于切片
+    func add (arg...int) int {}
+
+    //1个或多个参数
+    func add (a int,arg...int) int {}
+
+    //2个或多个参数
+    func add (a int,b int,arg...int) int {}
+    ```
+
+    >练习14：写一个函数add，支持1个或多个int相加，并返回相加结果
+
+    >练习15：写一个函数concat，支持1个或多个string相拼接，并返回结果
+
+    >[代码位置: Day3\LivingExample-19 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-19\main.go)
+
+    - 7.defer的用途：
+        - a 当函数返回时，执行defer语句。因此，可以用来做资源清理
+        - b 多个defer语句，按先进后出的方式执行
+        - c defer语句中的变量，在defer声明时就决定了。
+
+        >[代码位置: Day3\LivingExample-20 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-20\main.go)
+
+        ```golang
+        func a() {
+            i := 0
+            defer fmt.Println(i)
+            i++
+            return
+            } 
+        func f() {
+                for i := 0; i < 5; i++ {
+                        defer fmt.Printf(“%d “, i)
+                } 
+            } 
+        ```
+        - 7.1 锁资源释放
+
+        ```go
+        func read() {
+        file := open(filename)
+        defer file.Close()
+
+        //文件操作
+        }
+        ```
+
+        - 7.2 锁资源释放
+
+        ```golang
+        func read() {
+        mc.Lock()
+        defer mc.Unlock()
+        //其他操作
+        }
+        ```
+
+        - 7.3 数据库连接释放
+
+        ```golang
+        func read() {
+        conn := openDatabase()
+        defer conn.Close()
+        //其他操作
+        }
+        ```
+    
 - <a id=3-5>5. 课后作业</a>
+    - 1.编写程序，在终端输出九九乘法表。[Day3\Assignment\one\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\one\main.go)
+    - 2.一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程找出1000以内的所有完数。[Day3\Assignment\two\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\two\main.go)
+    - 3.输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。[Day3\Assignment\three\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\three\main.go)
+    - 4.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。[Day3\Assignment\four\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\four\main.go)
+    - 5.计算两个大数相加的和，这两个大数会超过int64的表示范围.
+    - [自己的版本 Day3\Assignment\five\my-version\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\five\my-version\main.go)
+    - [别人的版本Day3\Assignment\five\teacher-version\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\five\teacher-version\main.go)
+
+  
 
 
