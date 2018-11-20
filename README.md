@@ -675,12 +675,19 @@ func main() {
 <a id=4>数组、切片、map、package介绍</a>
 
 <a href=#4-1>1.内置函数、递归函数、闭包</a>
+
 <a href=#4-2>2.数组与切片</a>
+
 <a href=#4-3>3.map数组结构</a>
+
 <a href=#4-4>4.package介绍</a>
+
 <a href=#4-5>5.课后作业</a>
+
 <a href=#4-6>Day-1 golang语言基础</a>
+
 <a href=#4-7>Day-1 golang语言基础</a>
+
 <a href=#4-8>Day-1 golang语言基础</a>
 
 <a id=4-1>1.内置函数、递归函数、闭包</a>
@@ -727,12 +734,13 @@ func main() {
 
 
 <a id=4-3>3.map数组结构</a>
+
 <a id=4-4>4.package介绍</a>
+
 <a id=4-5>5.课后作业</a>
 
-
-
-
 <a id=4-6>Day-1笔记</a>
+
 <a id=4-7>Day-1笔记</a>
+
 <a id=4-8>Day-1笔记</a>
