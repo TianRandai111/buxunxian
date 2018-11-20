@@ -2,7 +2,10 @@
 
 <a href=#2>Day-2 数据类型与操作符</a>
 
-<a href=#3>Day-3 Outline</a>
+<a href=#3>Day-3 字符串处理包与函数</a>
+
+<a href=#4>Day-1 数组、切片、map、package介绍</a>
+
 
 <a href=#3333>Day-1 golang语言基础</a>
 
@@ -404,7 +407,7 @@ func main() {
         fmt.Println(now.Format("2006/1/02"))
         ```
         
-        >[代码位置: Day3\LivingExample-8\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-8\main.go)
+        >[代码位置: Day3/LivingExample-8/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-8/main.go)
 
     - 2.6 ``time.Duration``用来表示纳秒
     - 2.7 常量
@@ -419,9 +422,9 @@ func main() {
             Hour                 = 60 * Minute
         )
         ```
-    > 练习6：写一个程序，获取当前时间，并格式化成 2017/06/15 08:05:00形式[代码位置: Day3\LivingExample-9\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-9\main.go)
+    > 练习6：写一个程序，获取当前时间，并格式化成 2017/06/15 08:05:00形式[代码位置: Day3/LivingExample-9/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-9/main.go)
 
-    > 练习7：写一个程序，统计一段代码的执行耗时，单位精确到微秒。[代码位置: Day3\LivingExample-10\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-10\main.go)
+    > 练习7：写一个程序，统计一段代码的执行耗时，单位精确到微秒。[代码位置: Day3/LivingExample-10/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-10/main.go)
 
 - <a id=3-3>3. 指针类型</a>
     - 1. 普通类型，变量存的就是值，也叫值类型
@@ -432,10 +435,10 @@ func main() {
     var a int = 5  //a -- >5 变量a指向5
     var p *int = &a //0xefefef -> 5 指针p指向a的地址，a地址对应的值为5
     ```
-    >练习8：写一个程序，获取一个变量的地址，并打印到终端。[代码位置: Day3\LivingExample-11\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-11\main.go)
+    >练习8：写一个程序，获取一个变量的地址，并打印到终端。[代码位置: Day3/LivingExample-11/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-11/main.go)
 
 
-    >练习9：写一个函数，传入一个int类型的指针，并在函数中修改所指向的值。在main函数中调用这个函数，并把修改前后的值打印到终端，观察结果[代码位置: Day3\LivingExample-12\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-12\main.go)
+    >练习9：写一个函数，传入一个int类型的指针，并在函数中修改所指向的值。在main函数中调用这个函数，并把修改前后的值打印到终端，观察结果[代码位置: Day3/LivingExample-12/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-12/main.go)
 
 - <a id=3-6>3. 流程控制</a>
     - 1.if/else分钟判断
@@ -461,9 +464,9 @@ func main() {
 
     }
     ```
-    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 “can not convert to int”，并返回。否则输出该整数。[代码位置: Day3\LivingExample-13\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-13\main.go)
+    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 “can not convert to int”，并返回。否则输出该整数。[代码位置: Day3/LivingExample-13/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-13/main.go)
 
-    - 2.switch case语句,如果使用``fallthrough``会继续向下执行[代码位置: Day3\LivingExample-14\main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-14\main.go)
+    - 2.switch case语句,如果使用``fallthrough``会继续向下执行[代码位置: Day3/LivingExample-14/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-14/main.go)
         ```go
         // 写法1
         switch var {
@@ -494,7 +497,7 @@ func main() {
             fmt.Println(“def”)
         }
         ```
-        >练习：猜数字，写一个程序，随机生成一个0到100的整数n，然后用户在终端，输入数字，如果和n相等，则提示用户猜对了。如果不相等，则提示用户，大于或小于n。[代码位置: Day3\LivingExample-15 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-15\main.go)
+        >练习：猜数字，写一个程序，随机生成一个0到100的整数n，然后用户在终端，输入数字，如果和n相等，则提示用户猜对了。如果不相等，则提示用户，大于或小于n。[代码位置: Day3/LivingExample-15 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-15/main.go)
 
     - 3.for循环
         ```go
@@ -539,9 +542,9 @@ func main() {
         //Lable语句 字符串加: 配合goto continue使用
         
         ```
-        >打印图形[代码位置: Day3\LivingExample-16 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-16\main.go)
+        >打印图形[代码位置: Day3/LivingExample-16 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-16/main.go)
 
-        >break continue的使用方法[代码位置: Day3\LivingExample-17 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-17\main.go)
+        >break continue的使用方法[代码位置: Day3/LivingExample-17 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-17/main.go)
 
 - <a id=3-4>4. 函数详解</a>
     - 1.语法声明：func 函数名(参数列表) [(返回值列表)] {}
@@ -554,7 +557,7 @@ func main() {
     ```
     - 2.golang函数特点
         - 2.1 不支持重载，一个包不能有两个一样的函数
-        - 2.2 函数是一等公民，函数也是一种类型，函数可以复制给变量[代码位置: Day3\LivingExample-18 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-18\main.go)
+        - 2.2 函数是一等公民，函数也是一种类型，函数可以复制给变量[代码位置: Day3/LivingExample-18 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-18/main.go)
         - 2.3 匿名函数
         - 2.4 多返回值
     - 3.函数参数传递方式
@@ -605,14 +608,14 @@ func main() {
 
     >练习15：写一个函数concat，支持1个或多个string相拼接，并返回结果
 
-    >[代码位置: Day3\LivingExample-19 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-19\main.go)
+    >[代码位置: Day3/LivingExample-19/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-19/main.go)
 
     - 7.defer的用途：
         - a 当函数返回时，执行defer语句。因此，可以用来做资源清理
         - b 多个defer语句，按先进后出的方式执行
         - c defer语句中的变量，在defer声明时就决定了。
 
-        >[代码位置: Day3\LivingExample-20 \main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3\LivingExample-20\main.go)
+        >[代码位置: Day3/LivingExample-20/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-20/main.go)
 
         ```golang
         func a() {
@@ -659,14 +662,46 @@ func main() {
         ```
     
 - <a id=3-5>5. 课后作业</a>
-    - 1.编写程序，在终端输出九九乘法表。[Day3\Assignment\one\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\one\main.go)
-    - 2.一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程找出1000以内的所有完数。[Day3\Assignment\two\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\two\main.go)
-    - 3.输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。[Day3\Assignment\three\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\three\main.go)
-    - 4.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。[Day3\Assignment\four\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\four\main.go)
+    - 1.编写程序，在终端输出九九乘法表。[Day3/Assignment/one/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/one/main.go)
+    - 2.一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程找出1000以内的所有完数。[Day3/Assignment/two/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/two/main.go)
+    - 3.输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。[Day3/Assignment/three/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/three/main.go)
+    - 4.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。[Day3/Assignment/four/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/four/main.go)
     - 5.计算两个大数相加的和，这两个大数会超过int64的表示范围.
-    - [自己的版本 Day3\Assignment\five\my-version\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\five\my-version\main.go)
-    - [别人的版本Day3\Assignment\five\teacher-version\main.go](https://github.com/TianRandai111\buxunxian\Day3\Assignment\five\teacher-version\main.go)
+    - [自己的版本 Day3/Assignment/five/my-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/my-version/main.go)
+    - [别人的版本Day3/Assignment/five/teacher-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/teacher-version/main.go)
 
   
 
+<a id=4>Day-1笔记</a>
 
+<a href=#4-1>1.内置函数、递归函数、闭包</a>
+<a href=#4-2>2.数组与切片</a>
+<a href=#4-3>3.map数组结构</a>
+<a href=#4-4>4.package介绍</a>
+<a href=#4-5>5.课后作业</a>
+<a href=#4-6>Day-1 golang语言基础</a>
+<a href=#4-7>Day-1 golang语言基础</a>
+<a href=#4-8>Day-1 golang语言基础</a>
+
+<a id=4-1>1.内置函数、递归函数、闭包</a>
+
+- 1.1. 内置函数
+    - 1.1.1. close：主要用来关闭channel
+    - 1.1.2. len：用来求长度，比如string、array、slice、map、channel
+    - 1.1.3. new：用来分配内存，主要用来分配值类型，比如int、struct。返回的是指针
+    - 1.1.4. make：用来分配内存，主要用来分配引用类型，比如chan、map、slice
+    - 1.1.5. append：用来追加元素到数组、slice中
+    - 1.1.6. panic和recover：用来做错误处理
+    >new和make的区别
+    ![image](https://github.com/TianRandai111/buxunxian/tree/master/Day4/Image/图片1.png)
+<a id=4-2>2.数组与切片</a>
+<a id=4-3>3.map数组结构</a>
+<a id=4-4>4.package介绍</a>
+<a id=4-5>5.课后作业</a>
+
+
+
+
+<a id=4-6>Day-1笔记</a>
+<a id=4-7>Day-1笔记</a>
+<a id=4-8>Day-1笔记</a>
