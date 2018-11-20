@@ -692,8 +692,11 @@ func main() {
     - 1.1.4. make：用来分配内存，主要用来分配引用类型，比如chan、map、slice
     - 1.1.5. append：用来追加元素到数组、slice中
     - 1.1.6. panic和recover：用来做错误处理
+    
     >new和make的区别
-    ![image](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Image/Image1.png)
+
+    ![image](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Image/Image-1.png?raw=true)
+
 <a id=4-2>2.数组与切片</a>
 <a id=4-3>3.map数组结构</a>
 <a id=4-4>4.package介绍</a>
