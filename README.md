@@ -49,7 +49,6 @@ func main() {
         pipe <- 1 //将1放到pipe里
         pipe <- 2 //将2放到pipe里
     ```
-![image](le-3)
 - 3.返回值
     - [代码位置: Day1/LivingExample-4/return.go](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-4/return.go)
 
@@ -721,19 +720,160 @@ func main() {
 
 <a id=4-2>2.数组与切片</a>
 
-- 2.1
+- 2.1 数组
     - 2.1.1 数组：使用中数据类型的固定长度的序列。
     - 2.1.2 数组定义：var a [len]int,比如：var a[5]int
     - 2.1.3 长度是数组类型的一部分，因此，var a[5] int和 var a[10] int是不同的类型
     - 2.1.4 数组可以通过下标进行访问，下标是从0开始的，最后一个元素的下标是，len-1
     ```go
+    var a [10]int
     for i := 0;i < len(a);i++ {
     }
+    for i ,v := range a{
+    }
     ```
-    - 2.1.5 访问月结，如果下标在数组合法范围之外，则触发访问月结，会panic
+    - 2.1.5 访问越界：如果下标在数组合法范围之外，则触发访问越界，会panic
+    - 2.1.6 数组是值类型，因此改变副本的值，不会改变本身的值[代码位置: Day4/LivingExample-9/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-9/main.go)
 
+    >练习：使用非递归的方式实现斐波那契数列，打印前100个数。 [代码位置: Day4/LivingExample-10/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-10/main.go)
 
+    - 2.1.7 数组初始化
+        - a. ``var age0 [5]int = [5]int{1,2,3}``
+        - b. ``var age1 = [5]int{1,2,3,4,5,}``
+        - c. ``var age2 = [...]int{1,2,3,4,5}``
+        - d. ``var age3 = [5]string{3:"hello world",4:"tom"}``
+
+    - 2.1.8 多维数组
+        - a ``var age [5][3]int``
+        - b ``var f[2][3]int = [...][3]int{{1,2,3,},{7,8,9}} //两行三列`` 
+
+    - 2.1.9 多维数组遍历
+        - [代码位置: Day4/LivingExample-11/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-11/main.go)
+
+- 2.2 切片
+    - 2.2.1. 切片：切片是数组的一个引用，因此切片是引用类型
+    - 2.2.2. 切片的长度可以改变，因此，切片是一个可变的数组
+    - 2.2.3. 切片遍历方式和数组一样，可以用``len()``求长度
+    - 2.2.4. ``cap//内置函数``可以求出``slice``最大的容量，``0 <= len(slice) <= (array)``，其中``array``是``slice``引用的数组
+    - 2.2.5. 切片的定义：``var`` 变量名 []类型，比如`` var str []string  var arr []int``
+    - 2.2.6. 切片初始化[代码位置: Day4/LivingExample-12/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-12/main.go)
+        - a. 切片初始化：``var slice []int = arr[start:end]``包含``start``到``end``之间的元素，但不包含``end`` 
+        - b. ``var slice []int = arr[0:end]``可以简写为`` var slice []int=arr[:end]``
+        - c. ``var slice []int = arr[start:len(arr)]`` 可以简写为 ``var slice[]int = arr[start:]``
+        - d. ``var slice []int = arr[0, len(arr)]`` 可以简写为`` var slice[]int = arr[:]``
+        - e. 如果要切片最后一个元素去掉，可以这么写： ``slice = slice[:len(slice)-1]``
+    >练习：写一个程序，演示切片的各个用法[代码位置: Day4/LivingExample-13/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-13/main.go)
+
+    - 2.2.7. 切片的内存布局
+        - ![image](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Image/Image-2.png?raw=true)
+
+    - 2.2.8. 通过make来创建切片
+        - a. ``var slice []type = make([]type,len)``
+        - b. ``slice := make([]type,len)``
+        - c. ``slice := make([]type,len,cap)``
+        - ![image](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Image/Image-3.png?raw=true)
+
+    - 2.2.9. 用append内置函数操作切片
+        ```golang
+        slice =append(slice, 10)
+        var a = []int{1,2,3}
+        var b = []int{4,5,6}
+        a= append (a,b)
+        ```
+    
+    - 2.2.10. 遍历切片
+        ```go
+        for index, val := range slice {}
+        ```
+
+    - 2.2.11. 切片resize
+        ```golang
+        var a = []int{1,3,4,5}
+        b := a[1:2]
+        b = b[0:3]
+        ```
+    
+    - 2.2.12. 切片拷贝copy()//拷贝不会扩展切片，如果新生成的切片小于被拷贝的切片，只会拷贝到新切片下标的长度。
+        ```go
+        s1 := []int{1,2,3,4,5}
+        s2 := make([]int, 10)
+        copy(s2, s1)
+        s3 := []int{1,2,3}
+        s3 = append(s3, s2…)
+        s3 = append(s3, 4,5,6)
+        ```
+        - [代码位置: Day4/LivingExample-14/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-14/main.go)
+
+    - 2.2.13. string与slice,string底层就是一个byte的数组，因此，也可以进行切片操作
+        ```go
+        str := "hello world"
+        s1 := str[0:5]
+        fmt.Println(s1)
+
+        s2 := str[5:]
+        fmt.Println(s2)
+        ```
+        - [代码位置: Day4/LivingExample-15/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-15/main.go)
+        - string的底层布局
+        - ![image](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Image/Image-4.png?raw=true)
+        - 修改string的值[代码位置: Day4/LivingExample-15/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-15/main.go)
+
+    - 2.2.14. 排序和查找
+        - a. 排序操作主要都在 ``sort``包中，导入就可以使用了``import("sort")``
+        - b. ``sort.Ints``对整数进行排序， ``sort.Strings``对字符串进行排序, ``sort.Float64s``对浮点数进行排序.
+        - c. ``sort.SearchInts(a []int, b int)`` 从数组``a``中查找``b``，前提是``a``必须有序
+        - d. ``sort.SearchFloats(a []float64, b float64)`` 从数组``a``中查找``b``，前提是``a``必须有序
+        - f. ``sort.SearchStrings(a []string, b string) ``从数组``a``中查找``b``，前提是``a``必须有序
+        - [代码位置: Day4/LivingExample-17/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-17/main.go)
 <a id=4-3>3.map数组结构</a>
+
+- 3.1. map简介:key-value的数据结构，又叫字典或关联数组
+    - 3.1.1 声明//声明是不会分配内存的，初始化需要make,同样的key:value会覆盖
+        ```golang
+        var map1 map[keytype]valuetype
+        var a map[string]string
+        var a map[string]int
+        var a map[int]string
+        var a map[string]map[string]string
+        ```
+    - [代码位置: Day4/LivingExample-18/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-18/main.go)
+
+- 3.2. 相关操作
+    ```go
+    var a map[string]string = map[string]string{"hello": "world",}
+    a = make(map[string]string, 10)
+    a["hello"] = "world"    //插入和更新
+    val, ok := a["hello"]   //查找
+    for k, v := range a {   //遍历
+        fmt.Println(k,v) 
+    }
+    delete(a, "hello")      //删除
+    len(a)                  //长度
+    ```
+    - [代码位置: Day4/LivingExample-19/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-19/main.go)
+
+- 3.3. map是引用类型
+    ```golang
+    func modify(a map[string]int) {
+    a[“one”] = 134
+    }
+    ```
+
+- 3.4. slice of map
+    ```golang
+    Items := make([]map[int][int], 5)
+    For I := 0; I < 5; i++ {
+            items[i] = make(map[int][int])
+    }
+    ```
+
+- 3.5. map排序
+    - 3.5.1. 先获取所有key，把key进行排序
+    - 3.5.2. 按照排序好的key，进行遍历
+
+- 3.6. Map反转
+    - 3.6.1. 初始化另外一个map，把key、value互换即可
+
 
 <a id=4-4>4.package介绍</a>
 
