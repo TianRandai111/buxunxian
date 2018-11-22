@@ -683,12 +683,6 @@ func main() {
 
 <a href=#4-5>5.课后作业</a>
 
-<a href=#4-6>Day-1 golang语言基础</a>
-
-<a href=#4-7>Day-1 golang语言基础</a>
-
-<a href=#4-8>Day-1 golang语言基础</a>
-
 <a id=4-1>1.内置函数、递归函数、闭包</a>
 
 - 1.1. 内置函数
@@ -866,21 +860,43 @@ func main() {
             items[i] = make(map[int][int])
     }
     ```
+    - [代码位置: Day4/LivingExample-20/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-20/main.go)
 
 - 3.5. map排序
     - 3.5.1. 先获取所有key，把key进行排序
     - 3.5.2. 按照排序好的key，进行遍历
+    - [代码位置: Day4/LivingExample-21/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-21/main.go)
 
 - 3.6. Map反转
     - 3.6.1. 初始化另外一个map，把key、value互换即可
+    - [代码位置: Day4/LivingExample-22/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-22/main.go)
 
 
 <a id=4-4>4.package介绍</a>
 
+- 4.1. golang中的包
+    - 4.1.1. golang目前有150个标准包，覆盖了几乎所有的基础库
+    - 4.1.2. golang.org有所有包的文档,多多翻阅
+
+- 4.2. 线程同步 //多个线程同时操作一个资源
+    - 4.2.1. ``import("sync")``
+    - 4.2.2. 互斥锁,``var mu sync.Mutex``
+    - 4.2.3. 读写锁,``var mu sync.RWMutex``
+
+- 4.3. go get安装第三方包
+
 <a id=4-5>5.课后作业</a>
 
-<a id=4-6>Day-1笔记</a>
-
-<a id=4-7>Day-1笔记</a>
-
-<a id=4-8>Day-1笔记</a>
+- 5.1. 实现一个冒泡排序
+    - 自己的版本[代码位置: Day4\Assignment\one\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/one/my-version/main.go)
+    - 老师的版本[代码位置: Day4\Assignment\one\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/one/teacher-version/main.go)
+- 5.2. 实现一个选择排序
+    - 自己的版本[代码位置: Day4\Assignment\two\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/two/my-version/main.go)
+    - 老师的版本[代码位置: Day4\Assignment\two\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/two/teacher-version/main.go)
+    
+- 5.3. 实现一个插入排序
+    - 自己的版本[代码位置: Day4\Assignment\three\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/three/my-version/main.go)
+    - 老师的版本[代码位置: Day4\Assignment\three\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/three/teacher-version/main.go)
+- 5.4. 实现一个快速排序
+    - 自己的版本[代码位置: Day4\Assignment\four\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/four/my-version/main.go)
+    - 老师的版本[代码位置: Day4\Assignment\four\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/four/teacher-version/main.go)
