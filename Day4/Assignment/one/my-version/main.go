@@ -6,18 +6,19 @@ import (
 
 func MaoPao(a []int) {
 	b := len(a)
-	for j := 0; j <= b-1; j++ {
-		//fmt.Println("j=", j)
+	for j := 0; j < b; j++ {
+		// fmt.Println("j=", j)
 		for i := 0; i < b-1-j; i++ {
-			//fmt.Println("\ti=", i)
-			//fmt.Println("\tb=", b)
+			// fmt.Println("\ti=", i)
+			// fmt.Println("\tb=", b)
 			if a[i] > a[i+1] {
 				a[i], a[i+1] = a[i+1], a[i]
 			}
-			//fmt.Println(a)
+			// fmt.Println(a)
 		}
 
 	}
+	return
 
 }
 
