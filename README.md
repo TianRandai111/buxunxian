@@ -6,6 +6,8 @@
 
 <a href=#4>Day-4 数组、切片、map、package介绍</a>
 
+<a href=#5>Day-5 结构体、方法、接口</a>
+
 
 <a href=#3333>Day-1 golang语言基础</a>
 
@@ -902,3 +904,73 @@ func main() {
 - 5.4. 实现一个快速排序
     - 自己的版本[代码位置: Day4\Assignment\four\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/four/my-version/main.go)
     - 老师的版本[代码位置: Day4\Assignment\four\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/four/teacher-version/main.go)
+
+<a id=5>Day-5 结构体、方法、接口</a>
+
+<a href=#5-1>1. 结构体和方法</a>
+<a href=#5-2>2. 接口</a>
+<a href=#5-3>2. 作业</a>
+
+<a id=5-1>1. 结构体和方法</a>
+
+- 1.1 结构体的定义
+    - 1.1.1 用来定义复杂的数据结构
+    - 1.1.2 struct里面可以包含多个字段（属性）
+    - 1.1.3 strunt类型可以定义方法，注意和函数的区分
+    - 1.1.4 sturct类型是值类型
+    - 1.1.5 struct类型可以嵌套
+    - 1.1.6 Go语言没有class类型，只有struct类型
+
+- 1.2 结构体的声明
+
+    ```go
+    type 标识符 struct{
+        field1 type
+        field1 type
+    }
+    // 例子
+    type Student struct{
+        Name string 
+        age int
+        scort int
+    }
+    ```
+    - [代码位置: Day5/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-1/main.go)
+
+- 1.3 struct 中字段访问，和其他语言一样，实用点
+    ```golang
+    //例子
+    var stu Student
+    stu.Name = "tony"
+    stu.Age = 18
+    stu.Score = 20
+
+    fmt.Printf("name=%s,age=%d,Score=%d",stu.Name,stu.Age,stu.Score)
+    ```
+
+- 1.4 结构体定义的三种形式：
+
+    ```go
+    var stu student
+    var stu *student = new(Student)
+    var stu *student = &Student{}
+    ```
+    - 1.4.1 其中二、三返回的都是指向结构体的指针，访问形式如下：
+    ``stu.Name、stu.Age和stu.Score或者(*stu).Name、(*stu).Age等``
+
+- 1.5 链表定义
+    ```go
+    type Student struct{
+        Name string
+        Next* Student
+    }
+    ```
+    - 链表的插入方法
+        - 尾部插入法
+            - 手动插入链表 [代码位置: Day5/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-2/main.go)
+            - 循环尾部插入链表 [代码位置: Day5/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-3/main.go)
+            - 循环头部插入链表，删除链表的一个节点 [代码位置: Day5/LivingExample-4/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-4/main.go)
+
+<a id=5-2>2. 接口</a>
+
+<a id=5-3>2. 作业</a>
