@@ -38,5 +38,6 @@ func main() {
 	head.Age = 99
 	head.Score = 100
 	insertTail(&head)
+	fmt.Println(head)
 	trans(&head)
 }

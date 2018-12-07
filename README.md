@@ -6,7 +6,10 @@
 
 <a href=#4>Day-4 数组、切片、map、package介绍</a>
 
-<a href=#5>Day-5 结构体、方法、接口</a>
+<a href=#5>Day-5 结构体、方法</a>
+
+<a href=#6>Day-6 接口、反射</a>
+
 
 
 <a href=#3333>Day-1 golang语言基础</a>
@@ -907,11 +910,13 @@ func main() {
 
 <a id=5>Day-5 结构体、方法、接口</a>
 
-<a href=#5-1>1. 结构体和方法</a>
-<a href=#5-2>2. 接口</a>
-<a href=#5-3>2. 作业</a>
+<a href=#5-1>1. 结构体</a>
 
-<a id=5-1>1. 结构体和方法</a>
+<a href=#5-2>2. 方法</a>
+
+<a href=#5-4>3. 作业</a>
+
+<a id=5-1>1. 结构体</a>
 
 - 1.1 结构体的定义
     - 1.1.1 用来定义复杂的数据结构
@@ -962,15 +967,582 @@ func main() {
     ```go
     type Student struct{
         Name string
-        Next* Student
+        Next *Student
     }
     ```
     - 链表的插入方法
         - 尾部插入法
             - 手动插入链表 [代码位置: Day5/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-2/main.go)
             - 循环尾部插入链表 [代码位置: Day5/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-3/main.go)
-            - 循环头部插入链表，删除链表的一个节点 [代码位置: Day5/LivingExample-4/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-4/main.go)
+            - 循环头部插入链表，添加、删除链表的一个节点[代码位置: Day5/LivingExample-4/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-4/main.go)
 
-<a id=5-2>2. 接口</a>
+- 1.6双链表定义
+    ```golang
+    type Student struct{
+        Name string
+        Next *Student
+        Prev *Student
+    }
+    ```
+    >如果有两个指针分别指向前一个节点和后一个节点,我们叫做双链表
 
-<a id=5-3>2. 作业</a>
+- 1.7 二叉树
+    ```golang
+    type Student struct{
+        Name string
+        left *Student
+        right *Student
+    }
+    ```
+    >如果每个几点有两个指针飞边指向左子树和右子树，我们吧这样的结构叫做二叉树
+
+    >[代码位置: Day5/LivingExample-5/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-5/main.go)
+
+- 1.8 结构体是用户单独定义的类型，不能和其他类型进行强制转换
+
+```golang
+type Student struct {
+        Number int
+}
+
+type Stu Student //alias
+
+//Student与Stu不是同一类型
+
+var a Student
+a = Student(30)
+
+var b Stu
+
+//此处赋值会失败
+a = b
+
+//需要类型转换
+a = Student(b)
+```
+
+- 1.9 golang中的struct没有构造函数，一般可以使用工厂模式来解决这个问题
+```golang
+Package model
+type student struct {
+       Name stirng
+    Age int
+}
+
+func NewStudent(name string, age int) *student {
+return &student{
+       Name:name,
+       Age:age,}
+}
+
+Package main
+S := new (student)
+S := model.NewStudent(“tony”, 20)
+
+```
+
+- 1.11 我们可以为struct中的每个字段，写上一个tag。这个tag可以通过反射的机制获取到，最常用的场景就是json序列化和反序列化(描述信息)
+
+```golang
+type student struct {
+       Name stirng  “this is name field”
+    Age int           “this is age field”
+}
+```
+>[代码位置: Day5/LivingExample-6/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-6/main.go)
+
+
+- 1.12 匿名字段，结构体中字段可以没有名字，即你名字段
+```golang
+type Car struct {
+    Name string
+    Age int        
+}
+
+type Train struct {
+        Car
+        int
+        Start time.Time
+}
+```
+>[代码位置: Day5/LivingExample-7/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-7/main.go)
+
+<a id=5-2>2. 方法</a>
+- 2.0 方法 go中的方法是作用在特定类型的变量上，因此自定义类型，都可以有方法，而不仅仅是struct
+    - 定义：func (recevier type) methodName(参数列表)(返回值列表){}
+
+- 2.1 方法的调用
+    - 方法的声明和调用[代码位置: Day5/LivingExample-8/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-8/main.go)
+```golang
+type A struct {
+        a int
+}
+
+func (this A) test() {         fmt.Println(this.a)
+}
+
+var t A
+t.test()
+```
+
+- 2.2 方法和函数的区别
+    - 2.2.1 函数调用： ``function(variable, 参数列表）``
+    - 2.2.2 方法：``variable.function(参数列表）``
+
+      
+- 2.3 指针receiver   vs 值receiver
+    - 2.3.1 本质上和函数的值传递和地址传递是一样的
+
+- 2.4 方法的访问控制，通过大小写控制
+      
+- 2.5 继承
+    - 2.5.1 如果一个``struct``嵌套了另一个匿名结构体，那么这个结构可以直接访问匿名结构体的方法，从而实现了继承。
+    -[代码位置: Day5/LivingExample-9/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-9/main.go)
+    
+- 2.6 组合和匿名字段
+    - 2.6.1 如果一个``struct``嵌套了另一个匿名结构体，那么这个结构可以直接访问匿名结构体的方法，从而实现了继承。
+    - 2.6.2 如果一个``struct``嵌套了另一个有名结构体，那么这个模式就叫组合。
+    -[代码位置: Day5/LivingExample-9/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-9/main.go)
+
+- 2.7 多重继承
+    - 2.7.1 如果一个``struct``嵌套了多个匿名结构体，那么这个结构可以直接访问多个匿名结构体的方法，从而实现了多重继承。
+
+- 2.8 实现``String()``
+    - 2.8.1 如果一个变量实现了``String()``这个方法，那么fmt.Println默认会调用这个变量的``String()``进行输出。
+
+<a id=5-4>3. 作业</a>
+
+- 1. 实现一个图书管理系统，具有以下功能：
+    - a. 书籍录入功能，书籍信息包括书名、副本数、作者、出版日期
+    - b. 书籍查询功能，按照书名、作者、出版日期等条件检索
+    - c. 学生信息管理功能，管理每个学生的姓名、年级、身份证、性别、借了什么书等信息
+    - d. 借书功能，学生可以查询想要的书籍，进行借出
+    - e. 书籍管理功能，可以看到每种书被哪些人借出了
+
+<a id=6>Day-6 接口、反射</a>
+
+<a href=#6-1>1.接口</a>
+
+<a href=#6-2>2.反射</a>
+
+<a href=#6-3>3.作业</a>
+
+<a id=6-1>1.接口</a>
+
+
+<a id=6-1>1. 接口</a>
+
+- 1.1. 定义
+    - 1.1.1 Interface类型可以定义一组方法，但是这些不需要实现。并且interface不能包含任何变量。
+    
+
+- 1.2 接口声明  
+    ```go 
+    type example interface{
+
+            Method1(参数列表) 返回值列表
+            Method2(参数列表) 返回值列表
+            …
+    }
+    ```
+
+- 1.3. interface类型默认是一个指针
+```go
+type example interface{
+
+        Method1(参数列表) 返回值列表
+        Method2(参数列表) 返回值列表
+        …
+}
+
+var a example
+a.Method1()
+```
+
+- 1.4. 接口实现
+    - 1.5.1. Golang中的接口，不需要显示的实现。只要一个变量，含有接口类型中的所有方法，那么这个变量就实现这个接口。因此，golang中没有implement类似的关键字
+    - 1.5.2. 如果一个变量含有了多个interface类型的方法，那么这个变量就实现了多个接口。
+    - 1.5.3. 如果一个变量只含有了1个interface的方部分方法，那么这个变量没有实现这个接口。
+
+- 1.5 多态
+    - 一种事物的多种形态，都可以按照统一的接口进行操作
+    - [代码位置: Day6/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-1/main.go)
+    - [代码位置: Day6/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-2/main.go)
+
+
+- 1.6. 接口嵌套
+    - 一个接口可以嵌套在另外的接口，如下所示：
+    ```go
+    type ReadWrite interface {
+                Read(b Buffer) bool
+                Write(b Buffer) bool
+    } 
+    type Lock interface {
+                Lock()
+                Unlock() 
+    } 
+    type File interface {
+                ReadWrite
+                Lock 
+                Close() 
+    } 
+    ```
+
+- 1.7. 类型断言，由于接口是一般类型，不知道具体类型，如果要转成具体类型
+    - 可以采用以下方法进行转换：
+    ```go
+    var t int
+    var x interface{}
+    x = t
+    y = x.(int)   //转成int
+
+    var t int
+    var x interface{}
+    x = t
+    y, ok = x.(int)   //转成int，带检查
+    ```
+
+- 1.8. 练习，写一个函数判断传入参数的类型
+```go
+ func classifier(items ...interface{}) {
+          for i, x := range items { 
+                  switch x.(type) {
+                    case bool:       fmt.Printf(“param #%d is a bool\n”, i)
+                    case float64:    fmt.Printf(“param #%d is a float64\n”, i)
+                    case int, int64: fmt.Printf(“param #%d is an int\n”, i)
+                    case nil: fmt.Printf(“param #%d is nil\n”, i)
+                    case string: fmt.Printf(“param #%d is a string\n”, i)
+                    default: fmt.Printf(“param #%d’s type is unknown\n”, i)
+            }
+}
+```
+
+- 1.9. 类型断言，采用type switch方式
+```go
+switch t := areaIntf.(type) {
+case *Square:
+    fmt.Printf(“Type Square %T with value %v\n”, t, t) 
+case *Circle:
+    fmt.Printf(“Type Circle %T with value %v\n”, t, t) 
+case float32:
+    fmt.Printf(“Type float32 with value %v\n”, t)
+case nil:
+    fmt.Println(“nil value: nothing to check?”) 
+default:
+    fmt.Printf(“Unexpected type %T”, t)
+}
+```
+ - [代码位置: Day6/LivingExample-4main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-4/main.go)
+
+- 1.10. 16. interface{}，接口中一个方法也没有，所以任何类型都实现了空接口，也就是任何变量都可以赋值给空接口。
+    - 1.10.1 空接口没有任何方法，所以所有类型都实现了空接口。
+    ```go
+    var a int
+    var b interface{}
+    b  = a
+    ```
+    - 1.10.2 变量slice和接口slice之间赋值操作，for range
+    ```go
+    var a []int
+    var b []interface{}
+    b = a
+    ```
+
+
+- 1.11. 判断一个变量是否实现了指定接口
+    - 判断一个变量是否实现了指定接口
+    ```go
+    type Stringer interface {
+            String() string 
+    }
+    var v MyStruct
+    if sv, ok := v.(Stringer); ok {
+        fmt.Printf(“v implements String(): %s\n”, sv.String()); 
+    } 
+    ```
+ - [代码位置: Day6/LivingExample-3main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-3/main.go)
+- 1.12. 指针类型和值类型的区别
+      
+- 1.13. 实现一个通用的链表类
+       - [代码位置: Day6/LivingExample-6main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-6/main.go)
+- 1.14. 实现一个负载均衡调度算法，支持随机、轮训等算法
+      
+
+<a id=6-2>2.反射</a>
+
+- 2.1. 反射：可以在运行时动态获取变量的相关信息Import (“reflect”)
+    - 两个函数：
+    - 2.1.1. ``reflect.TypeOf``，获取变量的类型，返回reflect.Type类型
+    - 2.1.2. ``reflect.ValueOf``，获取变量的值，返回reflect.Value类型
+    - 2.1.3. ``reflect.Value.Kind``，获取变量的类别，返回一个常量
+    - 2.1.4. ``reflect.Value.Interface()``，转换成interface{}类型
+    - [代码位置: Day6/LivingExample-6main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-6/main.go)
+
+```
+—————          ————————————          ——————————————
+|变量|  <----> |interface{}|  <----> |Reflect.Value|
+—————          ————————————          ——————————————
+```
+
+- 2.2. reflect.Value.Kind()方法返回的常量
+```golang
+const (
+        Invalid Kind = iota
+        Bool
+        Int
+        Int8
+        Int16
+        Int32
+        Int64
+        Uint
+        Uint8
+        Uint16
+        Uint32
+        Uint64
+        Uintptr
+        Float32
+        Float64
+        Complex64
+        Complex128
+        Array
+        Chan
+        Func
+        Interface
+        Map
+        Ptr
+        Slice
+        String
+        Struct
+        UnsafePointer
+) 
+```
+
+- 2.3. 练习：
+```golang
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func main() {
+
+	var x float64 = 3.4
+	fmt.Println("type:", reflect.TypeOf(x))
+	v := reflect.ValueOf(x)
+	fmt.Println("value:", v)
+	fmt.Println("type:", v.Type())
+	fmt.Println("kind:", v.Kind())
+	fmt.Println("value:", v.Float())
+
+	fmt.Println(v.Interface())
+	fmt.Printf("value is %5.2e\n", v.Interface())
+	y := v.Interface().(float64)
+	fmt.Println(y)
+}
+```
+
+```golang
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func main() {
+
+	var x float64 = 3.4
+	fmt.Println("type:", reflect.TypeOf(x))
+	v := reflect.ValueOf(x)
+	fmt.Println("value:", v)
+	fmt.Println("type:", v.Type())
+	fmt.Println("kind:", v.Kind())
+	fmt.Println("value:", v.Float())
+
+	fmt.Println(v.Interface())
+	fmt.Printf("value is %5.2e\n", v.Interface())
+	y := v.Interface().(float64)
+	fmt.Println(y)
+}
+```
+- 2.4. 获取变量的值：
+
+``reflect.ValueOf(x).Float() ``
+
+``reflect.ValueOf(x).Int()``
+
+``reflect.ValueOf(x).String()``
+
+``reflect.ValueOf(x).Bool()``
+
+- 2.5. 通过反射的来改变变量的值
+
+``reflect.Value.SetXX``相关方法，比如:
+
+``reflect.Value.SetFloat()``，设置浮点数
+
+``reflect.Value.SetInt()``，设置整数
+
+``reflect.Value.SetString()``，设置字符串
+
+
+- 2.6. 练习
+```golang
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func main() {
+
+	var a float64
+	fv := reflect.ValueOf(a)
+	fv.SetFloat(3.3)
+	fmt.Printf("%v\n", a)
+}
+
+```
+
+- 2.7. 崩溃的原因
+    - 还是值类型和引用类型的原因
+    - ``v := reflect.ValueOf(x) ``
+    - v是x的一个拷贝，修改v，x不会修改!
+
+- 2.8. 解决方法，传地址！
+```golang
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func main() {
+
+	var a float64
+	fv := reflect.ValueOf(&a)
+	fv.Elem().SetFloat(3.3)
+	fmt.Printf("%v\n", a)
+}
+```
+>其中fv.Elem()用来获取指针指向的变量，相当于： ``var a *int;  *a = 100``
+
+- 2.9. 用反射操作结构体
+    - 2.9.1. reflect.Value.NumField()获取结构体中字段的个数
+    - 2.9.2. reflect.Value.Method(n).Call来调用结构体中的方法
+
+- 2.10. 练习
+
+```golang
+package main
+
+import (
+	"fmt"
+	“reflect"
+)
+
+type NotknownType struct {
+	s1 string
+	s2 string
+	s3 string
+}
+func (n NotknownType) String() string {
+	return n.s1 + "-" + n.s2 + "-" + n.s3
+}
+var secret interface{} = NotknownType{"Ada", "Go", "Oberon"}
+
+func main() {
+	value := reflect.ValueOf(secret) // <main.NotknownType Value>
+	typ := reflect.TypeOf(secret)    // main.NotknownType
+	fmt.Println(typ)
+
+	knd := value.Kind() // struct
+	fmt.Println(knd)
+	
+	for i := 0; i < value.NumField(); i++ {
+		fmt.Printf("Field %d: %v\n", i, value.Field(i))
+		//value.Field(i).SetString("C#")
+	}
+	
+	results := value.Method(0).Call(nil)
+	fmt.Println(results) // [Ada - Go - Oberon]
+}
+```
+
+- 2.11. 练习，通过反射操作结构体
+```go
+package main
+
+import (
+	"fmt"
+	“reflect"
+)
+
+type NotknownType struct {
+	s1 string
+	s2 string
+	s3 string
+}
+func (n NotknownType) String() string {
+	return n.s1 + "-" + n.s2 + "-" + n.s3
+}
+var secret interface{} = NotknownType{"Ada", "Go", "Oberon"}
+
+func main() {
+	value := reflect.ValueOf(secret) // <main.NotknownType Value>
+	typ := reflect.TypeOf(secret)    // main.NotknownType
+	fmt.Println(typ)
+
+	knd := value.Kind() // struct
+	fmt.Println(knd)
+	
+	for i := 0; i < value.NumField(); i++ {
+		fmt.Printf("Field %d: %v\n", i, value.Field(i))
+		//value.Field(i).SetString("C#")
+	}
+	
+	results := value.Method(0).Call(nil)
+	fmt.Println(results) // [Ada - Go - Oberon]
+}
+```
+
+- 2.12. 练习2，通过反射修改结构体
+```golang
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+type T struct {
+	A int
+	B string
+}
+
+func main() {
+	t := T{23, "skidoo"}
+	s := reflect.ValueOf(&t).Elem()
+	typeOfT := s.Type()
+	for i := 0; i < s.NumField(); i++ {
+		f := s.Field(i)
+		fmt.Printf("%d: %s %s = %v\n", i,
+			typeOfT.Field(i).Name, f.Type(), f.Interface())
+	}
+	s.Field(0).SetInt(77)
+	s.Field(1).SetString("Sunset Strip")
+	fmt.Println("t is now", t)
+}
+```
+
+<a id=6-2>3.作业</a>
+
+- 1. 实现一个图书管理系统v2，具有以下功能：
+    - a. 增加用户登录、注册功能
+    - b. 增加借书过期的图书界面
+    - c. 增加显示热门图书的功能，被借次数最多的top10
+    - d. 增加查看某个人的借书记录的功能
