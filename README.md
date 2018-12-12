@@ -1343,6 +1343,8 @@ func main() {
 }
 ```
 
+
+
 ```golang
 package main
 
@@ -1376,6 +1378,8 @@ func main() {
 ``reflect.ValueOf(x).String()``
 
 ``reflect.ValueOf(x).Bool()``
+- [代码位置: Day6/LivingExample-7main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-7/main.go)
+
 
 - 2.5. 通过反射的来改变变量的值
 
@@ -1386,7 +1390,7 @@ func main() {
 ``reflect.Value.SetInt()``，设置整数
 
 ``reflect.Value.SetString()``，设置字符串
-
+- [代码位置: Day6/LivingExample-8main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-8/main.go)
 
 - 2.6. 练习
 ```golang
@@ -1434,6 +1438,8 @@ func main() {
 - 2.9. 用反射操作结构体
     - 2.9.1. reflect.Value.NumField()获取结构体中字段的个数
     - 2.9.2. reflect.Value.Method(n).Call来调用结构体中的方法
+- [代码位置: Day6/LivingExample-9main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-9/main.go)
+
 
 - 2.10. 练习
 
@@ -1538,7 +1544,7 @@ func main() {
 	fmt.Println("t is now", t)
 }
 ```
-
+2
 <a id=6-2>3.作业</a>
 
 - 1. 实现一个图书管理系统v2，具有以下功能：
