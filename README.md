@@ -10,6 +10,8 @@
 
 <a href=#6>Day-6 接口、反射</a>
 
+<a href=#7>Day-7 终端读写</a>>
+
 
 
 <a href=#3333>Day-1 golang语言基础</a>
@@ -1554,7 +1556,37 @@ func main() {
     - d. 增加查看某个人的借书记录的功能
 
 
+<a id=#7>Day-7 终端读写</a>
+
+<a href=#7-1>Day-7 终端读写</a>
+
+<a href=#7-2>Day-7 文件读写</a>
+
+<a href=#7-3>Day-7 命令行参数处理</a>
+
+<a href=#7-4>Day-7 json协议</a>
+
+<a href=#7-5>Day-7 错误处理</a>
+
+
+<a id=7-1>Day-7 终端读写</a>
+
 - os.stdin
+
 - os.stdout
-    
+    - [代码位置: Day7/LivingExample-1main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-1/main.go)
+      
 - os.stderr
+    - [代码位置: Day7/LivingExample-1main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-1/main.go)
+
+<a id=7-2>Day-7 文件读写</a>
+
+
+<a id=7-3>Day-7 命令行参数处理</a>
+
+
+<a id=7-4>Day-7 json协议</a>
+
+
+<a id=7-5>Day-7 错误处理</a>
+

@@ -7,5 +7,5 @@ import (
 
 func main() {
 	fmt.Fprintf(os.Stdout, "do balance error\n")
-	fmt.
+	fmt.Fprintf(os.Stderr, "This is error")
 }
