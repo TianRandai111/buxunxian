@@ -12,6 +12,9 @@
 
 <a href=#7>Day-7 终端读写</a>>
 
+<a href=#8>Day-8 并发与Chan</a>
+
+<a id=8>Day-8 并发与Chan</a>
 
 
 <a href=#3333>Day-1 golang语言基础</a>
@@ -1577,16 +1580,265 @@ func main() {
     - [代码位置: Day7/LivingExample-1main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-1/main.go)
       
 - os.stderr
-    - [代码位置: Day7/LivingExample-1main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-1/main.go)
+    - [代码位置: Day7/LivingExample-2main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-2/main.go)
+    ```go
+    package main
 
-<a id=7-2>Day-7 文件读写</a>
+    import (
+        "fmt"
+    )
+
+    var (
+        firstName, lastName, s string
+        i                      int
+        f                      float32
+        input                  = "56.12 / 5212 / Go"
+        format                = "%f / %d / %s"
+    )
+
+    func main() {
+        fmt.Println("Please enter your full name: ")
+        fmt.Scanln(&firstName, &lastName)
+        // fmt.Scanf("%s %s", &firstName, &lastName)
+        fmt.Printf("Hi %s %s!\n", firstName, lastName) // Hi Chris Naegels
+        fmt.Sscanf(input, format, &f, &i, &s)
+        fmt.Println("From the string we read: ", f, i, s)
+    }
+    ```
+- 缓冲区读写
+    - bufio
+        - 标准输入读
+        >[代码位置: Day7/LivingExample-3main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-3/main.go)
+
+        - 文件中读
+        >[代码位置: Day7/LivingExample-4main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-4/main.go)
+
+        - 练习，从终端读取一行字符串，统计英文、数字、空格以及其他字符的数量。
+        >[代码位置: Day7/LivingExample-4main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-4/main.go)
+
+<a id=7-2>7.2 文件读写</a>
+
+- 7.2.1 os.File封装所有文件相关操作，之前讲的 os.Stdin,os.Stdout, os.Stderr都是 os.File
+    - a 打开一个文件进行读操作： os.Open(name string) (*File, error)
+    - b 关闭一个文件：File.Close()
+    >[代码位置: Day7/LivingExample-5main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-5/main.go)
+
+    - 复制文件内容(小文件)
+    >[代码位置: Day7/LivingExample-6main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-6/main.go)
+
+    - 读取*.gz压缩文件中的内容
+    >[代码位置: Day7/LivingExample-7main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-7/main.go)
+
+- 7.2.2 文件写入
+    - ``os.OpenFile(“output.dat”,  os.O_WRONLY|os.O_CREATE, 0666)``
+    - 第二个参数：文件打开模式：
+        - 1. ``os.O_WRONLY``：只写
+        - 2. ``os.O_CREATE``：创建文件
+        - 3. ``os.O_RDONLY``：只读
+        - 4. ``os.O_RDWR``：读写
+        - 5. ``os.O_TRUNC ``：清空
+    - 第三个参数：权限控制：
+        - ``r ——> 004``
+        - ``w——> 002``
+        - ``x——> 001``
+
+- 7.2.3 写文件
+>[代码位置: Day7/LivingExample-8main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-8/main.go)
+
+- 7.2.4 文件拷贝
+
+>[代码位置: Day7/LivingExample-9main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-9/main.go)
+
+<a id=7-3>7.3 命令行参数处理</a>
+
+- 7.3.1 os.Args是一个string的切片，用来存储所有的命令行参数
+>[代码位置: Day7/LivingExample-10main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-10/main.go)
+
+- 7.3.2  flag包的使用，用来解析命令行参数：
+    - ``flag.BoolVar(&test, "b", false, "print on newline")``
+	- ``flag.StringVar(&str, "s", "", "print on newline")``
+	- ``flag.IntVar(&count, "c", 1001, "print on newline")``
+>[代码位置: Day7/LivingExample-11main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-11/main.go)
+
+<a id=7-4>7.4 json协议</a>
+
+(Golang) -序列化-> (Json字符串) -网络传输-> (程序) -反序列化-> (其他语言)
+
+- 1. 导入包：Import “encoding/json”
+- 2. 序列化: json.Marshal(data interface{})
+- 3. 反序列化: json.UnMarshal(data []byte,  v  interface{})
+- 练习序列化结构体
+>[代码位置: Day7/LivingExample-12main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-12/main.go)
+
+- 反序列化
+>[代码位置: Day7/LivingExample-13main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-13/main.go)
+
+<a id=7-5>7.5 错误处理</a>
+
+- 7.5.1. 定义错误
+
+    ```go
+    package main
+
+    import (
+        "errors"
+        "fmt"
+    )
+
+    var errNotFound error = errors.New("Not found error")
+
+    func main() {
+        fmt.Printf("error: %v", errNotFound)
+    }
+    ```
+
+- 7.5.2 自定义错误
+
+```go
+type error interface { 
+        Error() string 
+} 
+```
+
+- 练习
+
+```go
+package main
+import (
+//	"fmt"
+)
+type PathError struct {
+	Op   string
+	Path string
+	err string
+}
+func (e *PathError) Error() string {
+	return e.Op + " " + e.Path + ": " + e.Err.Error()
+}
+func test() error {
+	return &PathError{
+		Op:   "op",
+		Path: "path",
+	}
+}
+func main() {
+	test()
+}
+```
+>[代码位置: Day7/LivingExample-14main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-14/main.go)
+
+>[代码位置: Day7/LivingExample-15main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-15/main.go)
+
+<a id=8>Day-8 并发与Chan</a>
+
+<a href=#8-1>Day-8.1 Goroute</a>
+
+<a href=#8-2>Day-8.2 Channel</a>
+
+<a href=#8-3>Day-8.3 单元测试</a>
+
+<a href=#8-4>Day-8.4 课后作业</a>
 
 
-<a id=7-3>Day-7 命令行参数处理</a>
+<a id=8-1>Day-8.1 Goroute</a>
 
+- 1.进程和线程
+    - a.进程是程序在操作系统的一次执行过程，系统进行资源费配合调度的一个独立单位。
+    - b.线程时进程的一个执行试题，是CPU调度和分派的基本单位，他是比集成更小的能独立运行的基本单位。
+    - c.一个进程何以创建和撤销多个线程；同一个进程中的多个线程之间可以并发执行。
 
-<a id=7-4>Day-7 json协议</a>
+(进程) --> (一个线程) --> (单线程程序)
 
+(进程) --> (多个线程) --> (多线程程序)
 
-<a id=7-5>Day-7 错误处理</a>
+- 2.并发和并行
+    - a.多线程程序在一个核上的cpu上运行，就是并发
+    - b.多线程程序在多个核上的cpu上运行，就是并行
 
+- 3.协程和线程
+    - 协程：独立的栈空间，共享的队空间，调度有用户自己控制，本质上有点类似用户级线程，这些用户级线程的调度也是自己实现的
+    - 线程: 一个线程可以跑多个协程，协程是轻量级的线程
+
+>[代码位置: Day8/LivingExample-1main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-1/main.go)
+
+>[代码位置: Day8/LivingExample-2main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-2/main.go)
+- 4.gorouteine调度模型
+    - M:线程
+    - P:上下文
+    - G:协程
+
+**调度模型1** 
+```
+M       M
+|       |
+P--G    P--G
+|  |    |  |
+G  G    G  G
+   |       |
+   G       G
+```
+
+**调度模型2** 
+```
+M1    M0   |   M1       M0
+      |    |   |        |
+      P--G |   P--G     G0
+      |  | |   |  |
+      G  G |   G  G
+      |    |   |
+      G    |   G
+```
+
+- 5.如何设置golang占用CPU
+
+```go 
+
+pacakage main
+
+import (
+    "fmt"
+    "runtime"
+)
+
+func main() {
+    num := runtime.NumCPU()
+    runtime.GOMAXPROC(num)
+    fmt.Println(num)
+}
+
+```
+
+>[代码位置: Day8/LivingExample-3main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-3/main.go)
+
+<a id=8-2>Day-8.2 Channel</a>
+
+- 1.不同的goroutine之间是如何通信的
+    - a.全局变量  [需要加锁]
+    >[代码位置: Day8/LivingExample-4main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-4/main.go)
+
+    - b.Channel
+        - a.类似unix中关掉
+        - b.先进先出
+        - c.线程安全，多个goroutine同时访问，不需要加锁
+        - d.channel是有类型的，一个整数的channel只能存放整数
+
+        - channel声明
+            ```go
+            var 变量名 chan 类型
+            var test chan int
+            var test chan string
+            var test chan map[string]int
+            var test chan interface
+            ```
+            >[代码位置: Day8/LivingExample-5main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-5/main.go)
+
+        - channel阻塞
+            - channel的值多余channel的长度时会产生channel阻塞，此时channel的长度只能接受对应长度的值，长于channel的值将会进入阻塞状态
+            >[代码位置: Day8/LivingExample-6main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-6/main.go)
+
+        - channel同步
+            >[代码位置: Day8/LivingExample-7main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-7/main.go)
+
+<a id=8-3>Day-8.3 单元测试</a>
+
+<a id=8-4>Day-8.4 课后作业</a>
