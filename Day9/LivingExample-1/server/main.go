@@ -2,10 +2,31 @@ package main
 
 import (
 	"fmt"
-	"net"
+	"net" //网络socket开发是，net包含有我们需要的所有函数和方法。
 )
 
-//网络socket开发是，net包含有我们需要的所有函数和方法。
+func prossice(conn net.Conn) {
+	//这里循环接受客户端发送到的数据
+	defer conn.Close() //关闭链接
+
+	for {
+		//创建一个新的切片
+		buf := make([]byte, 1024)
+		//conn.Read(buf)
+		//1.等客户端通过Conn发送信息
+		//2.如果客户没有wrtie[发送]，那么协程就阻塞在这里
+		fmt.Println("服务器在等待客户端的输入" + conn.RemoteAddr().String())
+		n, err := conn.Read(buf)
+		if err != nil {
+			fmt.Println("server conn read failed,err=", err)
+			return
+		}
+		fmt.Println("客户端传来的多少个字节：", n)
+
+		//3.显示客户端发送的内容到服务器的终端
+		fmt.Printf(string(buf[:n]))
+	}
+}
 
 func main() {
 	fmt.Println("服务器开始监听...")
@@ -27,10 +48,10 @@ func main() {
 		if err != nil {
 			fmt.Println("Accept() err=", err)
 		} else {
-			fmt.Printf("Accept () suc con=%v\n", conn)
+			fmt.Printf("Accept () suc con=%v,客户端IP=%v\n", conn, conn.RemoteAddr().String())
 		}
 		//启动一个协程，微客户端服务
-
+		go prossice(conn)
 	}
 
 	fmt.Printf("listen=%v\n", List)
