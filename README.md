@@ -14,8 +14,7 @@
 
 <a href=#8>Day-8 并发与Chan</a>
 
-<a id=8>Day-8 并发与Chan</a>
-
+<a href=#9>Day-9 网络编程</a>
 
 <a href=#3333>Day-1 golang语言基础</a>
 
@@ -45,10 +44,10 @@ func main() {
 - 1.[代码位置: ](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-1/LivingExample-1/testgo.go)
 
 ### 第一个golang程序
-- 1.hello world[代码位置: ](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-2/hello.go)
-- 2.channel
-    - a.管道.类似unix/linux中的pipe
-    - b.多个goroute之间通过channel进行通信
+- 1.``hello world``[代码位置: ](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-2/hello.go)
+- 2.``channel``
+    - a.管道.类似``unix/linux``中的``pipe``
+    - b.多个``goroute``之间通过``channel``进行通信
     - c.支持任何类型
     > 如果管道存放的值数量，多于定义的长度会造成死锁，导致程序无法运行
 
@@ -63,9 +62,9 @@ func main() {
     - [代码位置: Day1/LivingExample-4/return.go](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-4/return.go)
 
 ### 包的概念
-- 1.和ptyhon一样，把相同的代码放到一个目录，称之为包
+- 1.和``ptyhon``一样，把相同的代码放到一个目录，称之为包
 - 2.包可以被其他包引用
-- 3.main包是用来生成执行文件，每个程序只有一个main包
+- 3.``main``包是用来生成执行文件，每个程序只有一个``main``包
 - 4.包的主要用途是提高代码的可复用性
 
 
@@ -79,13 +78,13 @@ func main() {
 
 >编译二进制文件``go build -o bin/calc_test.exe  ./main/main.go``
 
-- 2.多进程的goroute运算测试，
+- 2.多进程的``goroute``运算测试，
 
 >[main代码位置: Day1/LivingExample-6/main/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-6/main/main.go)
 
 >[main代码位置: Day1/LivingExample-6/goroute/add.go](https://github.com/TianRandai111/buxunxian/blob/master/Day1/LivingExample-6/goroute/add.go)
 
-作业：使用fmt,打印浮点数，二进制，十进制，十六进制
+作业：使用``fmt``,打印浮点数，二进制，十进制，十六进制
 
 ## <a id=2>Day-2笔记</a>
 
@@ -99,8 +98,10 @@ func main() {
 - <a href=#2-4>数据类型和操作符</a>
 - <a href=#2-5>字符串类型</a>
 
+### 文件名&关键字&标识符
+
 - <a id=2-1>文件名&关键字&标识符</a>
-    - 1.所有go源码以.go结尾
+    - 1.所有``go``源码以``.go``结尾
     - 2.标识符以字母或下划线开头，大小写铭感例如
 
     ``a. boy``  ``b. Boy`` ``c. a+b(错误实例)`` ``d. 0boy(错误实例)`` ``e._boy`` ``f. =_boy(错误实例)`` ``g. _``
@@ -115,6 +116,7 @@ func main() {
     |const|fallthough|if|range|type|
     |continue|for|import|return|var|
 
+### Go程序基本结
 - <a id=2-2>Go程序基本结构</a>
     ```go
     pacakge main 
@@ -128,7 +130,7 @@ func main() {
         fmt.Println("hello,world")
     }
     ```
-    >练习1.写一个程序，对于给定一个数字n,求出所有亮亮相家等于,的组合。比如：对于n=3,所有的组合如下所示
+    >练习1.写一个程序，对于给定一个数字``n``,求出所有亮亮相家等于,的组合。比如：对于``n=3``,所有的组合如下所示
     
     ```
     0+3=3
@@ -139,7 +141,7 @@ func main() {
 
     >[main代码位置: Day2/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-1/main.go)
     
-    >练习2.一个程序包包含两个包add和main,其中add包中有两个变量，Name和age。请问main包中是如何访问Name和Age的(大写的为公有，小写为私有)
+    >练习2.一个程序包包含两个包``add``和``main``,其中add包中有两个变量，``Name``和``age``。请问``main``包中是如何访问``Name``和``Age``的(大写的为公有，小写为私有)
 
     >[main代码位置: Day2/LivingExample-2/main/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-2/main/main.go)
 
@@ -151,35 +153,16 @@ func main() {
 
     >[add代码位置: Day2/LivingExample-3/add/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-3/add/main.go)
 
-    >练习4.每个源文件都可以包含一个init函数，这个init函数自动被go运行框架调用。开发一个演示这个功能
+    >练习4.每个源文件都可以包含一个``init``函数，这个``init``函数自动被``go``运行框架调用。开发一个演示这个功能
 
     >[代码位置: Day2/LivingExample-4/add/add.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-4/add/add.go)
 
-- <a id=2-6>函数的声明和注释</a>
-    - 1.函数声明：func函数名字(参数列表)(返回值列表){}
-        ```go
-        举例
-        func add(){}
-        ```
-        ```go
-        func add (a int,b int)int {}
-        ```
-        ```go
-        func add (a int,b int)(int,int){}
-        ```
-    - 2.注释，两种注释，单行注释：//多行注释：/*...*/
-        ```go
-        //add计算两个证书的和，并返回结果
-        func add(a int, b int) int {}
-        ```
-        ```go
-        /*add计算两个证书的和，并返回结果*/
-        func add(a int, b int) int {}
-        ```
+
+### 常量和变量
 - <a id=2-3>常量和变量</a>
-    - 1.常量使用const修饰，代表永远只读，不能修改。
-    - 2.const只能修饰boolean,number(int相关类型、浮点类型、complex)和string
-    - 3.语法``const identifier [type] = value``,其中type可以省略。
+    - 1.常量使用``const``修饰，代表永远只读，不能修改。
+    - 2.``const``只能修饰``boolean``,``number(int相关类型、浮点类型、complex)和string``
+    - 3.语法``const identifier [type] = value``,其中``type``可以省略。
     ```go
     const b string = "hello world"
     const b = "hello world"
@@ -196,12 +179,12 @@ func main() {
         c
     )
     ```
-    >练习：定义两个常量Man=1和Female=2,获取当年时间的秒数，如果能被Female整除，则在终端打印female，否则打印man
+    >练习：定义两个常量``Man=1``和``Female=2``,获取当年时间的秒数，如果能被``Femal``e整除，则在终端打印``female``，否则打印``man``
     
     >[代码位置: Day2/LivingExample-5/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-5/main.go)
 
     - 4. 变量
-        - 4.1 语法:var identifier type
+        - 4.1 语法:``var identifier type``
         ```go
         //eg1:
         var a int
@@ -226,7 +209,7 @@ func main() {
             e = "Hello world"
         )
         ```
-        >练习写一个程序获取当前运行的系统名称和PATH环境变量的值，并打印在终端
+        >练习写一个程序获取当前运行的系统名称和``PATH``环境变量的值，并打印在终端
 
         >[代码位置: Day2/LivingExample-6/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-6/main.go)
 
@@ -289,15 +272,9 @@ func main() {
             }
 
             ```
-- <a id=2-7>值类型和引用类型</a>
-    - 1.值类型：变量直接存储值，内存通常在栈中分配
-        - a.值类型：基本数据类型int、float、bool、string已经数组和struct.
-    - 2.应用类型：变量存储的是一个地址，这个地址存储最终的值。内存通常在对战分配，通过GC回收
-        - a.引用类型：指针、slice、map、chan等都是引用类型。
-    > go语言交换值独有的方式[代码位置: Day2/LivingExample-9/main/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-9/main/main.go)
 
 - <a id=2-4>数据类型和操作符</a>
-- 1.bool类型，只能存true和false
+- 1.``bool``类型，只能存``true``和``false``
     ```go
     var a bool
     var a bool = true
@@ -308,24 +285,58 @@ func main() {
     var a bool = true
     var b bool
     ```
-    > 请问!a、!b、a&&b、a||b的值分别是多少
+    > 请问``!a``、``!b``、``a&&b``、``a||b``的值分别是多少
+    
 - 3.数字类型，主要有
-    - 3.1 int 整形(由正负)
+    - 3.1`` int ``整形(由正负)
         - ``int``、``int8``、``int16``、``int32``、``int68``
-    - 3.2 uint 无符号整形(无负数)
+    - 3.2 ``uint`` 无符号整形(无负数)
         - ``uint8``、``uint16``、``uint32``、``uint64``
-    - 3.3 float浮点数
+    - 3.3 ``float``浮点数
         - ``float32``、``float64``
+        
 - 4. 类型转换
     ```go
     var a int8 = 100
     //将int8类型的a转换成int16
     var b int16 = int16(a)
     ```
+### 字符串类型
 - <a id=2-5>字符串类型</a>
     - 字符串拼装操作[代码位置: Day2/LivingExample-12/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-12/main.go)
 
     - 字符串反转：[代码位置: Day2/LivingExample-13/main/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-13/main/main.go)
+
+### 函数的声明和注释
+- <a id=2-6>函数的声明和注释</a>
+    - 1.函数声明：``func函数名字(参数列表)(返回值列表){}``
+        ```go
+        举例
+        func add(){}
+        ```
+        ```go
+        func add (a int,b int)int {}
+        ```
+        ```go
+        func add (a int,b int)(int,int){}
+        ```
+    - 2.注释，两种注释，单行注释：``//``多行注释：``/*...*/``
+        ```go
+        //add计算两个证书的和，并返回结果
+        func add(a int, b int) int {}
+        ```
+        ```go
+        /*add计算两个证书的和，并返回结果*/
+        func add(a int, b int) int {}
+        ```
+    
+### 值类型和引用类型
+- <a id=2-7>值类型和引用类型</a>
+    - 1.值类型：变量直接存储值，内存通常在栈中分配
+        - a.值类型：基本数据类型``int``、``float``、``bool``、``string``已经数组和``struct.``
+    - 2.应用类型：变量存储的是一个地址，这个地址存储最终的值。内存通常在对战分配，通过GC回收
+        - a.引用类型：指针、``slice``、``map``、``chan``等都是引用类型。
+    > go语言交换值独有的方式[代码位置: Day2/LivingExample-9/main/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/LivingExample-9/main/main.go)
 
 - 作业：
     - 判断101和200之间有多少个素数，并输出所有的素数
@@ -336,14 +347,14 @@ func main() {
 
     >[代码位置: (使用ASCII码来表示)Day2/Assignment/ASCII/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/Assignment/ASCII/main.go)
 
-    - 对于一个数n,求n的阶乘之和：，既：1！+2！+3！+...n
+    - 对于一个数``n``,求··的阶乘之和：，既：``1！+2！+3！+...n``
     >[代码位置: Day2/Assignment/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/Assignment/main.go)
 
 
     - 变量赋值的区别
     >[代码位置: Day2/Assignment/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day2/Assignment/main.go)
 
-## <a id=3>Outline</a>
+## <a id=3>字符串处理包与函数</a>
 
 - <a href=#3-1>1. strings和strconv的使用</a>
 - <a href=#3-2>2. Go中的时间和日期类型</a>
@@ -353,40 +364,40 @@ func main() {
 - <a href=#3-5>5. 课后作业</a>
 
 
-
-- <a id=3-1>1. strings和strconv的使用</a> 
-    - 1.1. strings.HasPrefix(s string, prefix string) bool：判断字符串s是否以prefix开头
+### ``strings``和``strconv``的使
+- <a id=3-1>1. ``strings``和``strconv``的使用</a> 
+    - 1.1. ``strings.HasPrefix(s string, prefix string) bool``：判断字符串s是否以prefix开头
     >练习1：判断一个url是否以http://开头，如果不是，则加上http://。
 
     >[代码位置: Day3/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-1/main.go)
 
-    - 1.2. strings.HasSuffix(s string, suffix string) bool：判断字符串s是否以suffix结尾。
+    - 1.2. ``strings.HasSuffix(s string, suffix string) bool``：判断字符串s是否以suffix结尾。
     >练习2：判断一个路径是否以"/"结尾，如果不是，则加上/。
 
     >[代码位置: Day3/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-2/main.go)
 
-    - 1.3. strings.Index(s string, str string) int：判断str在s中首次出现的位置，如果没有出现，则返回-1
+    - 1.3. ``strings.Index(s string, str string) int``：判断str在s中首次出现的位置，如果没有出现，则返回-1
     >[代码位置: Day3/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-3/main.go)
 
-    - 1.4. strings.LastIndex(s string, str string) int：判断str在s中最后出现的位置，如果没有出现，则返回-1
+    - 1.4. `strings.LastIndex(s string, str string) int`：判断str在s中最后出现的位置，如果没有出现，则返回-1
     >[代码位置: Day3/LivingExample-4/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-4/main.go)
 
-    - 1.5. strings.Replace(str string, old string, new string, n int)：字符串替换
-    - 1.6. strings.Count(str string, substr string)int：字符串计数
-    - 1.7. strings.Repeat(str string, count int)string：重复count次str
-    - 1.8. strings.ToLower(str string)string：转为小写
-    - 1.9. strings.ToUpper(str string)string：转为大写
+    - 1.5. `strings.Replace(str string, old string, new string, n int)`：字符串替换
+    - 1.6. `strings.Count(str string, substr string)int`：字符串计数
+    - 1.7. `strings.Repeat(str string, count int)string`：重复count次str
+    - 1.8. `strings.ToLower(str string)string`：转为小写
+    - 1.9. `strings.ToUpper(str string)string`：转为大写
     >练习4：写一个函数分别演示Replace、Count、Repeat、ToLower、ToUpper的用法
 
     >[代码位置: Day3/LivingExample-5/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-5/main.go)
 
-    - 1.10. strings.TrimSpace(str string)：去掉字符串首尾空白字符
-        - 1.10.1. strings.Trim(str string, cut string)：去掉字符串首尾cut字符
-        - 1.10.2. strings.TrimLeft(str string, cut string)：去掉字符串首cut字符
-        - 1.10.3. strings.TrimRight(str string, cut string)：去掉字符串首cut字符
-    - 1.11. strings.Field(str string)：返回str空格分隔的所有子串的slice
-        - 1.11.1. strings.Split(str string, split string)：返回str split分隔的所有子串的slice
-    - 1.12. strings.Join(s1 []string, sep string)：用sep把s1中的所有元素链接起来
+    - 1.10. `strings.TrimSpace(str string)`：去掉字符串首尾空白字符
+        - 1.10.1. `strings.Trim(str string, cut string)`：去掉字符串首尾cut字符
+        - 1.10.2. `strings.TrimLeft(str string, cut string)`：去掉字符串首cut字符
+        - 1.10.3. `strings.TrimRight(str string, cut string)`：去掉字符串首cut字符
+    - 1.11.` strings.Field(str string)：返回str空格分隔的所有子串的slice
+        - 1.11.1. `strings.Split(str string, split string`)：返回str split分隔的所有子串的slice
+    - 1.12. `strings.Join(s1 []string, sep string)`：用sep把s1中的所有元素链接起来
     >练习5：写一个函数分别演示TrimSpace、Trim、TrimLeft、TrimRight、Field、Split、以及Join的用法
 
     >[代码位置: Day3/LivingExample-6/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-6/main.go)
@@ -397,9 +408,11 @@ func main() {
     
     >[代码位置: Day3/LivingExample-7/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-7/main.go)
 
+
+### 2. Go中的时间和日期类型
 - <a id=3-2>2. Go中的时间和日期类型</a>
-    - 2.1 time包
-    - 2.2 time.{Time类型}，用来表示时间
+    - 2.1 `time`包
+    - 2.2 `time.{Time类型}`，用来表示时间
     - 2.3 获取当前时间``now := time.Now()``(通过这个参数可以获取以下的值)
     - 2.4 通过这个上面参数可以获取以下的值
         - 2.4.1 ``time.Now().Day()``
@@ -435,11 +448,13 @@ func main() {
 
     > 练习7：写一个程序，统计一段代码的执行耗时，单位精确到微秒。[代码位置: Day3/LivingExample-10/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-10/main.go)
 
+
+### 3. 指针类型
 - <a id=3-3>3. 指针类型</a>
     - 1. 普通类型，变量存的就是值，也叫值类型
-    - 2. 获取变量的地址，用&，比如： var a int, 获取a的地址：&a
+    - 2. 获取变量的地址，用&，比如： ``var a int``, 获取a的地址：``&a``
     - 3. 指针类型，变量存的是一个地址，这个地址存的才是值
-    - 4. 获取指针类型所指向的值，使用：*，比如：var *p int, 使用*p获取p指向的值
+    - 4. 获取指针类型所指向的值，使用：``*``，比如：``var *p int``, 使用``*p``获取``p``指向的值
     ```go
     var a int = 5  //a -- >5 变量a指向5
     var p *int = &a //0xefefef -> 5 指针p指向a的地址，a地址对应的值为5
@@ -447,7 +462,7 @@ func main() {
     >练习8：写一个程序，获取一个变量的地址，并打印到终端。[代码位置: Day3/LivingExample-11/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-11/main.go)
 
 
-    >练习9：写一个函数，传入一个int类型的指针，并在函数中修改所指向的值。在main函数中调用这个函数，并把修改前后的值打印到终端，观察结果[代码位置: Day3/LivingExample-12/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-12/main.go)
+    >练习9：写一个函数，传入一个··类型的指针，并在函数中修改所指向的值。在``main``函数中调用这个函数，并把修改前后的值打印到终端，观察结果[代码位置: Day3/LivingExample-12/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-12/main.go)
 
 - <a id=3-6>3. 流程控制</a>
     - 1.if/else分钟判断
@@ -473,9 +488,9 @@ func main() {
 
     }
     ```
-    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 "can not convert to int"，并返回。否则输出该整数。[代码位置: Day3/LivingExample-13/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-13/main.go)
+    >练习10：写一个程序，从终端读取输入，并转成整数，如果转成整数出错，则输出 ``"can not convert to int"``，并返回。否则输出该整数。[代码位置: Day3/LivingExample-13/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-13/main.go)
 
-    - 2.switch case语句,如果使用``fallthrough``会继续向下执行[代码位置: Day3/LivingExample-14/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-14/main.go)
+    - 2.``switch case``语句,如果使用``fallthrough``会继续向下执行[代码位置: Day3/LivingExample-14/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-14/main.go)
         ```go
         // 写法1
         switch var {
@@ -553,10 +568,11 @@ func main() {
         ```
         >打印图形[代码位置: Day3/LivingExample-16 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-16/main.go)
 
-        >break continue的使用方法[代码位置: Day3/LivingExample-17 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-17/main.go)
-
+        >``break continue``的使用方法[代码位置: Day3/LivingExample-17 /main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/LivingExample-17/main.go)
+        
+### 4. 函数详解
 - <a id=3-4>4. 函数详解</a>
-    - 1.语法声明：func 函数名(参数列表) [(返回值列表)] {}
+    - 1.语法声明：``func 函数名(参数列表) [(返回值列表)] {}``
     ```golang
     func add(){}
     func add(a int, b int){}
@@ -574,7 +590,7 @@ func main() {
         - 3.2 引用传递
     >注意1：无论是值传递，还是引用传递，传递给函数的都是变量的副本，不过，值传递是值的拷贝。引用传递是地址的拷贝，一般来说，地址拷贝更为高效。而值拷贝取决于拷贝的对象大小，对象越大，则性能越低。
 
-    >注意2：map、slice、chan、指针、interface默认以引用的方式传递。
+    >注意2：``map``、``slice``、``chan``、指针、``interface``默认以引用的方式传递。
 
     - 4.命名返回值的名字
     ```go
@@ -669,18 +685,18 @@ func main() {
         //其他操作
         }
         ```
-    
+### 5. 课后作业
 - <a id=3-5>5. 课后作业</a>
     - 1.编写程序，在终端输出九九乘法表。[代码位置: Day3/Assignment/one/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/one/main.go)
-    - 2.一个数如果恰好等于它的因子之和，这个数就称为"完数"。例如6=1＋2＋3.编程找出1000以内的所有完数。[代码位置: Day3/Assignment/two/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/two/main.go)
+    - 2.一个数如果恰好等于它的因子之和，这个数就称为"完数"。例如`6=1＋2＋3`.编程找出1000以内的所有完数。[代码位置: Day3/Assignment/two/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/two/main.go)
     - 3.输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。[代码位置: Day3/Assignment/three/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/three/main.go)
     - 4.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。[代码位置: Day3/Assignment/four/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/four/main.go)
-    - 5.计算两个大数相加的和，这两个大数会超过int64的表示范围.
+    - 5.计算两个大数相加的和，这两个大数会超过`int64`的表示范围.
     - [代码位置: 自己的版本 Day3/Assignment/five/my-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/my-version/main.go)
     - [代码位置: 别人的版本Day3/Assignment/five/teacher-version/main.go](https://github.com/TianRandai111/buxunxian/tree/master/Day3/Assignment/five/teacher-version/main.go)
 
   
-
+## 数组、切片、map、package介
 <a id=4>数组、切片、map、package介绍</a>
 
 <a href=#4-1>1.内置函数、递归函数、闭包</a>
@@ -693,15 +709,18 @@ func main() {
 
 <a href=#4-5>5.课后作业</a>
 
+
+### 1.内置函数、递归函数、闭包
+
 <a id=4-1>1.内置函数、递归函数、闭包</a>
 
 - 1.1. 内置函数
-    - 1.1.1. close：主要用来关闭channel
-    - 1.1.2. len：用来求长度，比如string、array、slice、map、channel
-    - 1.1.3. new：用来分配内存，主要用来分配值类型，比如int、struct。返回的是指针[代码位置: Day4/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-1/main.go)
-    - 1.1.4. make：用来分配内存，主要用来分配引用类型，比如chan、map、slice
-    - 1.1.5. append：用来追加元素到数组、slice中[代码位置: Day4/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-2/main.go)
-    - 1.1.6. panic和recover：用来做错误处理[代码位置: Day4/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-3/main.go)
+    - 1.1.1. `close`：主要用来关闭`channel`
+    - 1.1.2. `len`：用来求长度，比如`string`、`array`、`slice`、`map`、`channel`
+    - 1.1.3. `new`：用来分配内存，主要用来分配值类型，比如`int`、`struct`。返回的是指针[代码位置: Day4/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-1/main.go)
+    - 1.1.4. `make`：用来分配内存，主要用来分配引用类型，比如`chan`、`map`、`slice`
+    - 1.1.5. `append`：用来追加元素到数组、slice中[代码位置: Day4/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-2/main.go)
+    - 1.1.6. `panic`和`recover`：用来做错误处理[代码位置: Day4/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-3/main.go)
 
     >new和make的区别
 
@@ -721,12 +740,12 @@ func main() {
     - [代码位置: Day4/LivingExample-7/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-7/main.go)
     - [代码位置: Day4/LivingExample-8/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-8/main.go)
 
-
+### 2.数组与切片
 <a id=4-2>2.数组与切片</a>
 
 - 2.1 数组
     - 2.1.1 数组：使用中数据类型的固定长度的序列。
-    - 2.1.2 数组定义：var a [len]int,比如：var a[5]int
+    - 2.1.2 数组定义：`var a [len]int`,比如：`var a[5]int`
     - 2.1.3 长度是数组类型的一部分，因此，var a[5] int和 var a[10] int是不同的类型
     - 2.1.4 数组可以通过下标进行访问，下标是从0开始的，最后一个元素的下标是，len-1
     ```go
@@ -748,8 +767,10 @@ func main() {
         - d. ``var age3 = [5]string{3:"hello world",4:"tom"}``
 
     - 2.1.8 多维数组
-        - a ``var age [5][3]int``
-        - b ``var f[2][3]int = [...][3]int{{1,2,3,},{7,8,9}} //两行三列`` 
+        ```
+        a ``var age [5][3]int``
+        b ``var f[2][3]int = [...][3]int{{1,2,3,},{7,8,9}} //两行三列`` 
+        ```
 
     - 2.1.9 多维数组遍历
         - [代码位置: Day4/LivingExample-11/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-11/main.go)
@@ -829,6 +850,9 @@ func main() {
         - d. ``sort.SearchFloats(a []float64, b float64)`` 从数组``a``中查找``b``，前提是``a``必须有序
         - f. ``sort.SearchStrings(a []string, b string) ``从数组``a``中查找``b``，前提是``a``必须有序
         - [代码位置: Day4/LivingExample-17/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-17/main.go)
+        
+        
+### 3.map数组结构
 <a id=4-3>3.map数组结构</a>
 
 - 3.1. map简介:key-value的数据结构，又叫字典或关联数组
@@ -881,7 +905,7 @@ func main() {
     - 3.6.1. 初始化另外一个map，把key、value互换即可
     - [代码位置: Day4/LivingExample-22/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/LivingExample-22/main.go)
 
-
+### 4.package介绍
 <a id=4-4>4.package介绍</a>
 
 - 4.1. golang中的包
@@ -895,6 +919,7 @@ func main() {
 
 - 4.3. go get安装第三方包
 
+### 5.课后作业
 <a id=4-5>5.课后作业</a>
 
 - 5.1. 实现一个冒泡排序
@@ -913,6 +938,7 @@ func main() {
     - 自己的版本[代码位置: Day4\Assignment\four\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/four/my-version/main.go)
     - 老师的版本[代码位置: Day4\Assignment\four\my-version\main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day4/Assignment/four/teacher-version/main.go)
 
+## Day-5 结构体、方法、接口
 <a id=5>Day-5 结构体、方法、接口</a>
 
 <a href=#5-1>1. 结构体</a>
@@ -921,6 +947,8 @@ func main() {
 
 <a href=#5-4>3. 作业</a>
 
+
+### 1.1 结构体
 <a id=5-1>1. 结构体</a>
 
 - 1.1 结构体的定义
@@ -1071,10 +1099,11 @@ type Train struct {
 }
 ```
 >[代码位置: Day5/LivingExample-7/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-7/main.go)
-
+### 2. 方法
 <a id=5-2>2. 方法</a>
+
 - 2.0 方法 go中的方法是作用在特定类型的变量上，因此自定义类型，都可以有方法，而不仅仅是struct
-    - 定义：func (recevier type) methodName(参数列表)(返回值列表){}
+    - 定义：``func (recevier type) methodName(参数列表)(返回值列表){}``
 
 - 2.1 方法的调用
     - 方法的声明和调用[代码位置: Day5/LivingExample-8/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day5/LivingExample-8/main.go)
@@ -1115,6 +1144,7 @@ t.test()
 - 2.8 实现``String()``
     - 2.8.1 如果一个变量实现了``String()``这个方法，那么fmt.Println默认会调用这个变量的``String()``进行输出。
 
+### 3. 作业
 <a id=5-4>3. 作业</a>
 
 - 1. 实现一个图书管理系统，具有以下功能：
@@ -1124,6 +1154,7 @@ t.test()
     - d. 借书功能，学生可以查询想要的书籍，进行借出
     - e. 书籍管理功能，可以看到每种书被哪些人借出了
 
+## Day-6 接口、反射
 <a id=6>Day-6 接口、反射</a>
 
 <a href=#6-1>1.接口</a>
@@ -1134,7 +1165,7 @@ t.test()
 
 <a id=6-1>1.接口</a>
 
-
+### 1. 接口
 <a id=6-1>1. 接口</a>
 
 - 1.1. 定义
@@ -1239,7 +1270,7 @@ default:
 ```
  - [代码位置: Day6/LivingExample-4main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-4/main.go)
 
-- 1.10. 16. interface{}，接口中一个方法也没有，所以任何类型都实现了空接口，也就是任何变量都可以赋值给空接口。
+- 1.10. 16. ``interface{}``，接口中一个方法也没有，所以任何类型都实现了空接口，也就是任何变量都可以赋值给空接口。
     - 1.10.1 空接口没有任何方法，所以所有类型都实现了空接口。
     ```go
     var a int
@@ -1273,14 +1304,16 @@ default:
 - 1.14. 实现一个负载均衡调度算法，支持随机、轮训等算法
       
 
+### 2.反射
+
 <a id=6-2>2.反射</a>
 
 - 2.1. 反射：可以在运行时动态获取变量的相关信息Import (“reflect”)
     - 两个函数：
-    - 2.1.1. ``reflect.TypeOf``，获取变量的类型，返回reflect.Type类型
-    - 2.1.2. ``reflect.ValueOf``，获取变量的值，返回reflect.Value类型
+    - 2.1.1. ``reflect.TypeOf``，获取变量的类型，返回``reflect.Type``类型
+    - 2.1.2. ``reflect.ValueOf``，获取变量的值，返回``reflect.Value``类型
     - 2.1.3. ``reflect.Value.Kind``，获取变量的类别，返回一个常量
-    - 2.1.4. ``reflect.Value.Interface()``，转换成interface{}类型
+    - 2.1.4. ``reflect.Value.Interface()``，转换成``interface{}``类型
     - [代码位置: Day6/LivingExample-6main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day6/LivingExample-6/main.go)
 
 ```
@@ -1549,7 +1582,8 @@ func main() {
 	fmt.Println("t is now", t)
 }
 ```
-2
+
+### 3.作业
 <a id=6-2>3.作业</a>
 
 - 1. 实现一个图书管理系统v2，具有以下功能：
@@ -1558,20 +1592,21 @@ func main() {
     - c. 增加显示热门图书的功能，被借次数最多的top10
     - d. 增加查看某个人的借书记录的功能
 
+## Day-7 终端读写
 
 <a id=#7>Day-7 终端读写</a>
 
-<a href=#7-1>Day-7 终端读写</a>
+<a href=#7-1>终端读写</a>
 
-<a href=#7-2>Day-7 文件读写</a>
+<a href=#7-2>文件读写</a>
 
-<a href=#7-3>Day-7 命令行参数处理</a>
+<a href=#7-3>命令行参数处理</a>
 
-<a href=#7-4>Day-7 json协议</a>
+<a href=#7-4>json协议</a>
 
-<a href=#7-5>Day-7 错误处理</a>
+<a href=#7-5>错误处理</a>
 
-
+### 7.1 终端读写
 <a id=7-1>Day-7 终端读写</a>
 
 - os.stdin
@@ -1616,6 +1651,7 @@ func main() {
         - 练习，从终端读取一行字符串，统计英文、数字、空格以及其他字符的数量。
         >[代码位置: Day7/LivingExample-4main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-4/main.go)
 
+### 7.2 文件读
 <a id=7-2>7.2 文件读写</a>
 
 - 7.2.1 os.File封装所有文件相关操作，之前讲的 os.Stdin,os.Stdout, os.Stderr都是 os.File
@@ -1649,6 +1685,7 @@ func main() {
 
 >[代码位置: Day7/LivingExample-9main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-9/main.go)
 
+### 7.3 命令行参数处
 <a id=7-3>7.3 命令行参数处理</a>
 
 - 7.3.1 os.Args是一个string的切片，用来存储所有的命令行参数
@@ -1660,19 +1697,21 @@ func main() {
 	- ``flag.IntVar(&count, "c", 1001, "print on newline")``
 >[代码位置: Day7/LivingExample-11main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-11/main.go)
 
+### 7.4 json协议
 <a id=7-4>7.4 json协议</a>
 
 (Golang) -序列化-> (Json字符串) -网络传输-> (程序) -反序列化-> (其他语言)
 
-- 1. 导入包：Import “encoding/json”
-- 2. 序列化: json.Marshal(data interface{})
-- 3. 反序列化: json.UnMarshal(data []byte,  v  interface{})
+- 1. 导入包：``Import “encoding/json”``
+- 2. 序列化: ``json.Marshal(data interface{})``
+- 3. 反序列化: ``json.UnMarshal(data []byte,  v  interface{})``
 - 练习序列化结构体
 >[代码位置: Day7/LivingExample-12main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-12/main.go)
 
 - 反序列化
 >[代码位置: Day7/LivingExample-13main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-13/main.go)
 
+### 7.5 错误处理
 <a id=7-5>7.5 错误处理</a>
 
 - 7.5.1. 定义错误
@@ -1729,6 +1768,8 @@ func main() {
 
 >[代码位置: Day7/LivingExample-15main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day7/LivingExample-15/main.go)
 
+
+## Day-8 并发与Chan
 <a id=8>Day-8 并发与Chan</a>
 
 <a href=#8-1>Day-8.1 Goroute</a>
@@ -1739,7 +1780,7 @@ func main() {
 
 <a href=#8-4>Day-8.4 课后作业</a>
 
-
+### 8.1 Goroute
 <a id=8-1>Day-8.1 Goroute</a>
 
 - 1.进程和线程
@@ -1810,6 +1851,8 @@ func main() {
 
 >[代码位置: Day8/LivingExample-3main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-3/main.go)
 
+
+### 8.2 Channel
 <a id=8-2>Day-8.2 Channel</a>
 
 - 1.不同的goroutine之间是如何通信的
@@ -1837,8 +1880,136 @@ func main() {
             >[代码位置: Day8/LivingExample-6main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-6/main.go)
 
         - channel同步
+            - 检查管道是否被关闭
             >[代码位置: Day8/LivingExample-7main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-7/main.go)
 
+            - channel同步 
+            >[代码位置: Day8/LivingExample-8main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-8/main.go)
+
+        - channel 通信
+        >[代码位置: Day8/LivingExample-9main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-9/main.go)
+
+        >[代码位置: Day8/LivingExample-10main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-10/main.go)
+
+        >[代码位置: Day8/LivingExample-11main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-11/main.go) 
+
+        >[代码位置: Day8/LivingExample-12main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-12/main.go)
+
+        - channel的只读和只写
+            - a. 只读chan的声明
+                ```go
+                var 变量名 <-chan int
+                var readChan <-chan int 
+                ```
+            - b. 只写chan的声明
+                ```go
+                var 变量名 chan <- int
+                var writeChan chan <- int
+                ```
+
+        - channel的switch
+            - select
+
+
+### 8.3 定时器的使用
 <a id=8-3>Day-8.3 单元测试</a>
 
+- 一次性定时器
+    ```golang
+     time.After(time.Second)
+    ```
+
+- 超时控制
+    ```golang
+    time.NewTicker(time.Second)
+    ```
+    >[代码位置: Day8/LivingExample-13main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-13/main.go)
+
+
+- 协程中捕获异常(recover)
+    >[代码位置: Day8/LivingExample-14main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-14/main.go)
+
+
+### 8.4 单元测试
+<a id=8-4>Day-8.3 单元测试</a>
+
+- 1.文件名必须以`(文件名)_test.go`结尾
+
+- 2.使用``
+
+    >[代码位置: Day8/LivingExample-15main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day8/LivingExample-15/main.go)
+
+### 8.5 课后作业
 <a id=8-4>Day-8.4 课后作业</a>
+
+### Day-9 网络编程
+
+<a id=9>Day-9 TCP编程</a>
+
+<a href=#9>Day-9 TCP编程</a>
+<a href=#9>Day-9 TCP变成</a>
+<a href=#9>Day-9 TCP变成</a>
+
+
+<a id=9-1>Day-9 TCP编程</a>
+
+Golang的主要涉及目标之一就是面向大规模后端服务程序，网络通讯这块是服务程序必不可少也是至关重要的一部分
+
+- 9.1网络编程有两种：
+    - 1.`TCP socket`变成，是网络编程的主流，之所以叫`TCP socket`编程，是因为底层基于`TCP\IP`协议的，比如`QQ`聊天
+    - 2.`b\s`结构的`http`编程，我们的浏览器去访问服务器时，使用的就是`http`协议，而`http`底层依旧是`tcp socket`实现的
+
+- 9.2协议
+    - `TCP/IP（Transmission Control Protocol/Internet Pr otocol)`的简写,中文译名为传输控制协议/因特网互联协议，又叫网络通讯协议，这个协议是`Internet` 最基本的协议、`Internet` 国际互联网络的基础，简单地说，就是由网络层的IP 协议和传输层的TCP 协议组成的。
+
+- 9.3`ip` 地址
+    - 概述：每个`internet` 上的主机和路由器都有一个
+
+- 9.4端口(port)-介绍
+    - 我们这里所指的端口不是指物理意义上的端口，而是特指TCP/IP 协议中的端口，是逻辑意义上的端口。如果把IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个IP 地址的端口可以有65536（即：256×256）个之多！端口是通过端口号来标记的，端口号只有整数，范围是从0 到65535（256×256-1）
+    - 0 号是保留端口.
+    - 1-1024 是固定端口(程序员不要使用)
+        - 又叫有名端口,即被某些程序固定使用,一般程序员不使用.
+            - 22: SSH 远程登录协议23: telnet 使用21: ftp 使用
+            - 25: smtp 服务使用80: iis 使用7: echo 服务
+    - 1025-65535 是动态端口,这些端口，程序员可以使
+
+- 9.5端口`(port)`-使用注意
+	- 1.在计算机(尤其是做服务器)要尽可能的少开端口
+	- 2.一个端口只能被一个程序监听
+	- 3.如果使用`netstat –an` 可以查看本机有哪些端口在监听
+	- 4.可以使用`netstat –anb` 来查看监听端口的pid,在结合任务管理器关闭不安全的端口
+
+- 9.6`tcp socket` 编程的客户端和服务器端
+    - 为了授课方法，我们将tcp socket 编程，简称socket 编程.下图为Golang socket 编程中客户端和服
+
+- 9.7`tcp socket` 编程的快速入门
+    - 1.服务端的处理流程
+        - a.监听端口8888
+        - b.接收客户端的tcp 链接，建立客户端和服务器端的链接.
+        - c.创建goroutine，处理该链接的请求(通常客户端会通过链接发送请求包)
+
+    - 2.客户端的处理流程
+        - a.建立与服务端的链接
+        - b.发送请求数据[终端]，接收服务器端返回的结果数据
+        - c.关闭链接
+
+    - 3.代码的实现
+        - 程序框架图示意图
+        - 服务器端功能:
+            - a.编写一个服务器端程序，在8888 端口监听
+            - b.可以和多个客户端创建链接
+            - c.链接成功后，客户端可以发送数据，服务器端接受数据，并显示在终端上.
+            - d.先使用telnet 来测试，然后编写客户端程序来测试
+        - 服务端的代码:
+
+            
+        - 客户端功能:
+            - a.编写一个客户端端程序，能链接到服务器端的8888 端口
+            - b.客户端可以发送单行数据，然后就退出
+            - c.能通过终端输入数据(输入一行发送一行), 并发送给服务器端[]
+            - d.在终端输入exit,表示退出程序.
+            - e.代码:
+
+<a id=9-2>Day-9 TCP变成</a>
+<a id=9-3>Day-9 TCP变成</a>
