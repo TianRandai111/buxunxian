@@ -16,6 +16,8 @@
 
 <a href=#9>Day-9 网络编程</a>
 
+<a href=#9>Day-10 HTTP编程</a>
+
 <a href=#3333>Day-1 golang语言基础</a>
 
 <a id=3333>Day-1笔记</a>
@@ -2002,14 +2004,255 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
             - c.链接成功后，客户端可以发送数据，服务器端接受数据，并显示在终端上.
             - d.先使用telnet 来测试，然后编写客户端程序来测试
         - 服务端的代码:
+        >[代码位置: Day9/LivingExample-1/server/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day9/LivingExample-1/server/main.go)
 
-            
         - 客户端功能:
             - a.编写一个客户端端程序，能链接到服务器端的8888 端口
             - b.客户端可以发送单行数据，然后就退出
             - c.能通过终端输入数据(输入一行发送一行), 并发送给服务器端[]
             - d.在终端输入exit,表示退出程序.
             - e.代码:
+            >[代码位置: Day9/LivingExample-1/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day9/LivingExample-1/client/main.go)
+<a id=9-2>Day-9.2 Redis 操作</a>
 
-<a id=9-2>Day-9 TCP变成</a>
-<a id=9-3>Day-9 TCP变成</a>
+- [redis文档](http://redisdoc.com/)
+
+- 9.2.1 `Redis` 安装好后，默认有16 个数据库，初始默认使用0 号库, 编号是0...15
+   - 1. 添加`key-val [set]`
+   - 2. 查看当前redis 的所有`key [keys *]`
+   - 3. 获取key 对应的值. `[get key]`
+   - 4. 切换redis 数据库`[select index]`
+   - 5. 如何查看当前数据库的`key-val` 数量`[dbsize]`
+   - 6. 清空当前数据库的`key-val` 和清空所有数据库的`key-val [flushdb flushall]`
+- 9.2.2 `Redis` 的五大数据类型:
+    - `Redis` 的五大数据类型是: `String(字符串) 、Hash (哈希)、List(列表)、Set(集合)和zset(sorted set：有序集合)`
+
+- 9.2.3 `String`(字符串) -介绍
+    - string 是redis 最基本的类型，一个key 对应一个value。
+    - string 类型是二进制安全的。除普通的字符串外，也可以存放图片等数据。
+    - redis 中字符串value 最大是512M
+
+- 9.2.4 `String`(字符串) -CRUD
+    - 举例说明`Redis` 的`String` 字符串的CRUD 操作.
+    - `set[如果存在就相当于修改，不存在就是添加]/get/del`
+
+- 9.2.5  `String`(字符串)-使用细节和注意事项
+    - `setex(set with expire)`键秒值秒值
+    ```
+    setex mess01 10 hello.you
+    ```
+    - 同时设置多个值，同时获取多个值
+        - `mset[同时设置一个或多个key-value 对]`
+        - `mget[同时获取多个key-val]`
+
+- 9.2.6 Hash` (哈希，类似golang 里的Map)`-介绍
+    - 基本的介绍
+        - `Redis hash` 是一个键值对集合。`var user1 map[string]string`
+        - `Redis hash` 是一个`string` 类型的`field` 和`value` 的映射表，`hash` 特别适合用于存储对象。
+    - 举例,存放一个`User` 信息:`(user1)`
+        - `user1 name "smith" age 30 job "golang coder"`
+        - 说明：
+        ```
+        key : user1
+        name 张三和age 30 就是两对field-value
+        ```
+
+    - `Hash``（哈希，类似golang 里的Map）-CRUD`
+        - 举例说明Redis 的Hash 的CRUD 的基本操作.
+        - `hset/hget/hgetall/hdel`
+        - 演示添加`user` 信息的案例`(name,age )`
+        ```
+        127.0.0.1:6379> hset user1 name "tom"
+        127.0.0.1:6379> hset user1 age  19
+        127.0.0.1:6379> hset user1 score 100
+
+        127.0.0.1:6379> hget user1 name
+        127.0.0.1:6379> hgetall user1
+
+        127.0.0.1:6379> mset user2 name "buxunxian" age "18" score "100"
+        127.0.0.1:6379> hmget user1 name age score
+        1) "tom"
+        2) "19"
+        3) "100"
+
+        127.0.0.1:6379> hlen user1
+        (integer) 3
+
+        ```
+- 9.2.7 List（列表）-介绍
+    - 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。
+    - List 本质是个链表, List 的元素是有序的，元素的值可以重复.
+    - 举例,存放多个地址信息:
+    - `city 北京 天津 上海`
+    - 说明：
+        - `key : city`
+        - 北京 天津 上海就是三个元素
+        ```
+        127.0.0.1:6379> lpush city beijing shanghai tianjing
+        (integer) 3
+        127.0.0.1:6379> lrange city 0 -1
+        1) "tianjing"
+        2) "shanghai"
+        3) "beijing"
+        127.0.0.1:6379> lrange city 0 -1
+        1) "tianjing"
+        2) "shanghai"
+        3) "beijing"
+        4) "hulunbeier"
+        127.0.0.1:6379> lpop city
+        "tianjing"
+        127.0.0.1:6379> lrange city 0 -1
+        1) "shanghai"
+        2) "beijing"
+        3) "hulunbeier"
+        127.0.0.1:6379> rpop city
+        "hulunbeier"
+        127.0.0.1:6379> lrange city 0 -1
+        1) "shanghai"
+        2) "beijing"
+        127.0.0.1:6379> del city
+        (integer) 1
+        127.0.0.1:6379> lrange city 0 -1
+        (empty list or set)
+        ```
+
+    - 命令
+        - lpush 从list左插入
+        - rpush 从list右插入
+        - lrange 遍历查询list的值，区间性质查找
+        - lpop  弹出一个list中的值,左第一个
+        - rpop  弹出一个list中的值,右第一个
+        - del   删除一个list
+        
+- 9.2.8 Set(集合) - 介绍
+    - Redis 的Set 是string 类型的无序集合。
+    - 底层是HashTable 数据结构, Set 也是存放很多字符串元素，字符串元素是无序的，而且元素的值不能重复
+    - 举例,存放多个邮件列表信息:
+        - email sgg@sohu.com tom@sohu.com
+        - 说明：
+        - key : email
+        - tn@sohu.com tom@sohu.com 就是二个元素
+
+- 9.2.9 Set(集合)- CRUD
+    - 举例说明Redis 的Set 的CRUD 操作.
+        ```
+        sadd
+        smembers[取出所有值]
+        sismember[判断值是否是成员]
+        srem [删除指定值]
+        ```
+        ```
+        127.0.0.1:6379> sadd emails tom@enn.com jack@suhu.com tianrandai@qq.com
+        (integer) 3
+        127.0.0.1:6379> smembers emails
+        1) "tom@enn.com"
+        2) "tianrandai@qq.com"
+        3) "jack@suhu.com"
+        127.0.0.1:6379> sismember emails tianrandai@qq.com
+        (integer) 1
+        127.0.0.1:6379> sismember emails bucunzai@qq.com
+        (integer) 0
+        127.0.0.1:6379> srem emails tianrandai@qq.com
+        (integer) 1
+        127.0.0.1:6379> del emails
+        (integer) 10
+        ```
+    - 演示添加多个电子邮件信息的案例
+
+- 9.2.10 Golang操作redis
+    - `go get github.com/garyburd/redigo/redis`安装支持redis的包
+    - 连接redis，并写入数据
+    >[代码位置: Day9/LivingExample-2/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day9/LivingExample-2/main.go)
+
+    - 连接redis，并写入hash数据
+    >[代码位置: Day9/LivingExample-3/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day9/LivingExample-3/main.go)
+
+- 9.2.11 批量Set/Get 数据
+    - 说明: 通过Golang 对Redis 操作，一次操作可以Set / Get 多个key-val 数据
+    - 核心代码:
+    ```golang
+        _, err = c.Do("MSet", "name", "尚硅谷", "address", "北京昌平~")
+        r, err := redis.Strings(c.Do("MGet", "name", "address"))
+        for _, v := range r {
+        fmt.Println(v)
+    ```
+    >[代码位置: Day9/LivingExample-5/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day9/LivingExample-5/main.go)
+
+- 9.2.12 给数据设置有效时间
+    - 说明: 通过Golang 对Redis 操作，给key-value 设置有效时间
+    - 核心代码:
+    ```golang 
+    //给name 数据设置有效时间为10s
+    _, err = c.Do("expire", "name", 10)
+    19.5.6 操作List
+    说明: 通过Golang 对Redis 操作List 数据类型
+    核心代码:
+    _, err = c.Do("lpush", "heroList", "no1:宋江", 30, "no2:卢俊义", 28)
+    r, err := redis.String(c.Do("rpop", "heroList"))
+    ```
+- 9.2.13 Redis 链接池
+    - 说明: 通过Golang 对Redis 操作， 还可以通过Redis 链接池, 流程如下：
+        - 1) 事先初始化一定数量的链接，放入到链接池
+        - 2) 当Go 需要操作Redis 时，直接从Redis 链接池取出链接即可。
+        - 3) 这样可以节省临时获取Redis 链接的时间，从而提高效率.
+        ```
+        pool = &redis.Pool{
+        MaxIdle: 8, //最大空闲链接数
+        MaxActive: 0, // 表示和数据库的最大链接数， 0 表示没有限制
+        IdleTimeout: 100, // 最大空闲时间
+        Dial: func() (redis.Conn, error) { // 初始化链接的代码， 链接哪个ip 的redis
+        return redis.Dial("tcp", "localhost:6379")
+        }
+        c := pool.Get{} //获取一个连接
+        pool.Close() //关闭链接就不能再从连接池中拿到连接了
+        ```
+
+- 9.2.14 海量用户即时通讯
+    》[代码位置: Day9/TX_Projack](https://github.com/TianRandai111/buxunxian/blob/master/Day9/TX_Projack)
+
+## Day-10 HTTP
+
+<a id=10>Day-10 HTTP编程</a>
+
+<a href=#10-1>Day-10.1 HTTP编程</a>
+
+<a href=#10-2>Day-10.2 Mysql使用 </a>
+
+<a href=#10-3>Day-10.3 课后作业</a>
+
+<a id=10-1>Day-10.1 HTTP编程</a>
+
+- 10.1.1 http编程
+    -  a. Go原生支持http，import(“net/http”)
+    -  b. Go的http服务性能和nginx比较接近
+    -  c. 几行代码就可以实现一个web服务
+- 10.1.2 http常见请求方法
+    - 1）Get请求
+    - 2）Post请求
+    - 3）Put请求
+    - 4）Delete请求
+    - 5）Head请求
+
+
+<a id=10-2>Day-10.2 Mysql使用</a>
+
+- 10.2.1 mysql编程
+    - a. 新建测试表
+        ```SQL
+        CREATE TABLE person (
+            user_id int primary key auto_increment,
+            username varchar(260),
+            sex varchar(260),
+            email varchar(260)
+        );
+        CREATE TABLE place (
+            country varchar(200),
+            city varchar(200),
+            telcode int
+        )
+        ```
+    - b. 链接mysql
+        ```golang
+        database, err := sqlx.Open("mysql", "root:@tcp(127.0.0.1:3306)/test")
+        ```
+<a id=10-3>Day-10.3 课后作业</a>

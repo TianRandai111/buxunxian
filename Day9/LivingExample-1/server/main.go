@@ -15,10 +15,10 @@ func prossice(conn net.Conn) {
 		//conn.Read(buf)
 		//1.等客户端通过Conn发送信息
 		//2.如果客户没有wrtie[发送]，那么协程就阻塞在这里
-		fmt.Println("服务器在等待客户端的输入" + conn.RemoteAddr().String())
+		fmt.Println("服务器在等待客户端" + conn.RemoteAddr().String() + "的输入")
 		n, err := conn.Read(buf)
 		if err != nil {
-			fmt.Println("server conn read failed,err=", err)
+			fmt.Println("客户端已退出")
 			return
 		}
 		fmt.Println("客户端传来的多少个字节：", n)
