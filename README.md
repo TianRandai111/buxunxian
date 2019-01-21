@@ -2208,7 +2208,7 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
         ```
 
 - 9.2.14 海量用户即时通讯
-    》[代码位置: Day9/TX_Projack](https://github.com/TianRandai111/buxunxian/blob/master/Day9/TX_Projack)
+    >[代码位置: Day9/TX_Projack](https://github.com/TianRandai111/buxunxian/blob/master/Day9/TX_Projack)
 
 ## Day-10 HTTP
 
@@ -2226,14 +2226,113 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
     -  a. Go原生支持http，import(“net/http”)
     -  b. Go的http服务性能和nginx比较接近
     -  c. 几行代码就可以实现一个web服务
+     >[代码位置: Day10/LivingExample-1/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-1/main.go)
+    
+
 - 10.1.2 http常见请求方法
     - 1）Get请求
+     >[代码位置: Day10/LivingExample-2/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-2/main.go)
     - 2）Post请求
     - 3）Put请求
     - 4）Delete请求
     - 5）Head请求
+      >[代码位置: Day10/LivingExample-3/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-3/main.go)
 
+- 10.1.3 表单处理
+     >[代码位置: Day10/LivingExample-4/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-4/main.go)
 
+- 10.1.4 模板渲染
+     >[代码位置: Day10/LivingExample-5/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-5/main.go)
+
+    - 模板操作
+    	- not 非 
+        ```
+        {{if not .condition}}  
+        {{end}} 
+        ```
+        - and 与 
+        ```
+        {{if and .condition1 .condition2}}  
+        {{end}} 
+        ```
+        - or 或 
+        ```
+        {{if or .condition1 .condition2}}  
+        {{end}} 
+        ```
+        - eq 等于 
+        ```
+        {{if eq .var1 .var2}}  
+        {{end}} 
+        ```
+        - ne 不等于 
+        ```
+        {{if ne .var1 .var2}}  
+        {{end}} 
+        ```
+        - lt 小于 (less than) 
+        ```
+        {{if lt .var1 .var2}}  
+        {{end}} 
+        ```
+        - le 小于等于 
+        ```
+        {{if le .var1 .var2}}  
+        {{end}} 
+        ```
+        - gt 大于 
+        ```
+        {{if gt .var1 .var2}}  
+        {{end}} 
+        ```
+        - ge 大于等于 
+        ```
+        {{if ge .var1 .var2}}  
+        {{end}}
+        ```
+
+    - 模板变量
+        `{{ .Value }}`
+        ```html
+        <html>
+                <head>
+                </head>
+                <body>
+                        <p>hello, old man, {{.}}</p>
+                </body>
+        </html>
+        ```
+
+    - with
+    ```html
+    <html>
+            <head>
+            </head>
+            <body>
+                    {{with .Name}}
+                    //{{.}}=={{with .Name}}
+                    <p>hello, old man, {{.}}</p>
+                    {{end}}
+            </body>
+    </html>
+    ```
+
+    - range 循环
+    ```html
+    <html>
+        <head>
+        </head>
+        <body>
+                {{range .}}
+                    {{if gt .Age 18}}
+                    <p>hello, old man, {{.Name}}</p>
+                    {{else}}
+                    <p>hello,young man, {{.Name}}</p>
+                    {{end}}
+                {{end}}
+        </body>
+    </html>
+    ```
 <a id=10-2>Day-10.2 Mysql使用</a>
 
 - 10.2.1 mysql编程

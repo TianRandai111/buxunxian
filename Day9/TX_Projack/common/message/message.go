@@ -2,7 +2,8 @@ package message
 
 const (
 	LoginMesType    = "LoginMes"
-	LgoinRseMesType = "LgoinRseMes"
+	LoginRseMesType = "LoginRseMes"
+	RegisterMesType = "RegisterMes"
 )
 
 //定义两个消息
@@ -19,4 +20,9 @@ type LoginMes struct {
 type LoginRseMes struct {
 	Code  int    //状态码
 	Error string //返回错误
+}
+
+type RegisterMes struct {
+	//注册模块
+
 }

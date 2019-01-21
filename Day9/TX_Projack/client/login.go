@@ -9,15 +9,12 @@ import (
 	"github.com/TianRandai111/buxunxian/Day9/TX_Projack/common/message"
 )
 
-var network_address string
-
 func login(userid int, pwd string) (err error) {
 	//定义协议
 	// fmt.Printf("userid=%d,pwd=%s\n", userid, pwd)
 	// return nil
 	//1.链接服务器
-	network_address = "10.4.83.196:8889"
-	conn, err := net.Dial("tcp", network_address)
+	conn, err := net.Dial("tcp", "10.4.83.196:8889")
 	if err != nil {
 		fmt.Println("连接服务器失败:", err)
 		return
@@ -73,6 +70,23 @@ func login(userid int, pwd string) (err error) {
 	}
 
 	//这里还需要处理服务器端返回的消息
+	// time.Sleep(20 * time.Second)
+	// fmt.Println("休眠了20秒...")
+	mes, err = readPkg(conn)
+	if err != nil {
+		fmt.Println("readPkg(conn) err=", err)
+		return
+	}
+
+	//mes的Data部分范雪梨花成LoginResMes
+
+	var loginResMes message.LoginRseMes
+	err = json.Unmarshal([]byte(mes.Data), &loginResMes)
+	if loginResMes.Code == 200 {
+		fmt.Println("登陆成功")
+	} else if loginResMes.Code == 500 {
+		fmt.Println(loginResMes.Error)
+	}
 
 	return
 }
