@@ -2423,6 +2423,7 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
     - c. 无法做定制化开发以及维护
 
 - 6.日志收集系统设计
+
     ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(2).png?raw=true)
 
 - 7.组件介绍
