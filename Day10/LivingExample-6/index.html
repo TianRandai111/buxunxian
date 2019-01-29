@@ -1,0 +1,14 @@
+<html>
+    <head>
+    <title>个人首页</title>
+    </head>
+    <body>
+        <table border="5">
+            {{range .}}
+            <tr>
+                <td>{{.Name}}</td><td>{{.Age}}</td>
+            </tr>
+            {{end}}
+        </table>
+    </body>
+</html>

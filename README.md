@@ -16,7 +16,13 @@
 
 <a href=#9>Day-9 网络编程</a>
 
-<a href=#9>Day-10 HTTP编程</a>
+<a href=#10>Day-10 HTTP编程</a>
+
+<a href=#11>Day-11 日志收集1</a>
+
+<a href=#12>Day-12 日志收集2</a>
+
+<a href=#13>Day-13 日志收集3</a>
 
 <a href=#3333>Day-1 golang语言基础</a>
 
@@ -2243,7 +2249,7 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
 
 - 10.1.4 模板渲染
      >[代码位置: Day10/LivingExample-5/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-5/main.go)
-
+    >[代码位置: Day10/LivingExample-6/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-6/main.go)
     - 模板操作
     	- not 非 
         ```
@@ -2348,10 +2354,137 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
             country varchar(200),
             city varchar(200),
             telcode int
-        )
+        );
         ```
+
+        mysqld的驱动包
+        `github.com/go-sql-driver/mysql`
+        `github.com/jmoiron/sqlx`
+
     - b. 链接mysql
-        ```golang
-        database, err := sqlx.Open("mysql", "root:@tcp(127.0.0.1:3306)/test")
-        ```
-<a id=10-3>Day-10.3 课后作业</a>
+    ```golang
+    database, err := sqlx.Open("mysql", "root:@tcp(127.0.0.1:3306)/test")
+    ```
+    
+    - c. insert操作
+    ```golang
+    r, err := Db.Exec("insert into person(username, sex, email)values(?, ?, ?)", "stu001", "man", "stu01@qq.com")
+    ```
+    >[代码位置: Day10/LivingExample-7/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-7/main.go)
+
+    - d. Select 操作
+    ```golang
+    err := Db.Select(&person, "select user_id, username, sex, email from person where user_id=?", 1)
+    ```
+    >[代码位置: Day10/LivingExample-8/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-8/main.go)
+
+    - e. update操作
+    ```golang
+    _, err := Db.Exec("update person set username=? where user_id=?", "stu0001", 1)
+    ```
+    >[代码位置: Day10/LivingExample-9/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-9/main.go)
+
+    - f. Delete 操作
+    ```golang
+    _, err := Db.Exec("delete from person where user_id=?", 1)
+    ```
+    >[代码位置: Day10/LivingExample-10/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-10/main.go)
+
+<a id=11>Day-11 日志收集1</a>
+
+<a href=#11-1>Day-11.1 日志收集系统设计</a>
+
+<a href=#11-2>Day-11.2 日志客户端开发</a>
+
+
+<a id=11-1>Day-11.1 日志收集系统设计</a>
+
+- 1.项目背景
+    - a. 每个系统都有日志，当系统出现问题时，需要通过日志解决问题
+    - b. 当系统机器比较少时，登陆到服务器上查看即可满足
+    - c. 当系统机器规模巨大，登陆到机器上查看几乎不现实
+
+- 2.解决方案
+    - a. 把机器上的日志实时收集，统一的存储到中心系统
+    - b. 然后再对这些日志建立索引，通过搜索即可以找到对应日志
+    - c. 通过提供界面友好的web界面，通过web即可以完成日志搜索
+
+- 3.面临的问题
+    - a. 实时日志量非常大，每天几十亿条
+    - b. 日志准实时收集，延迟控制在分钟级别
+    - c. 能够水平可扩展
+
+- 4.业界方案ELK
+    ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(1).png?raw=true)
+
+- 5.elk方案问题
+    - a. 运维成本高，每增加一个日志收集，都需要手动修改配置
+    - b. 监控缺失，无法准确获取logstash的状态
+    - c. 无法做定制化开发以及维护
+
+- 6.日志收集系统设计
+    ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(2).png?raw=true)
+
+- 7.组件介绍
+    - a. Log Agent，日志收集客户端，用来收集服务器上的日志
+    - b. Kafka，高吞吐量的分布式队列，linkin开发，apache顶级开源项目
+    - c. ES，elasticsearch，开源的搜索引擎，提供基于http restful的web接口
+    - d. adoop，分布式计算框架，能够对大量数据进行分布式处理的平台
+
+    - 7.1 kafka应用场景
+        - 1.异步处理, 把非关键流程异步化，提高系统的响应时间和健壮性
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(3).png?raw=true)
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(4).png?raw=true)
+        - 2.应用解耦,通过消息队列
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(5).png?raw=true)
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(6).png?raw=true)
+        - 3.流量削峰
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(7).png?raw=true)
+    - 7.2 zookeeper应用场景
+        - 1.服务注册&服务发现
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(8).png?raw=true)
+        - 2.配置中心
+        
+        ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(9).png?raw=true)  
+        - 3.分布式锁
+            - a. Zookeeper是强一致的
+            - b. 多个客户端同时在Zookeeper上创建相同znode，只有一个创建成功
+
+- 8.安装kafka
+    - a.  安装JDK，从oracle下载最新的SDK安装
+    - b.  安装zookeeper3.3.6，下载地址：http://apache.fayea.com/zookeeper/
+        - 1）mv conf/zoo_sample.cfg conf/zoo.cfg
+        - 2）编辑 conf/zoo.cfg，修改dataDir=D:\zookeeper-3.3.6\data\
+        - 3）运行bin/zkServer.cmd
+    - c.  安装kafka
+        - 1）打开链接：http://kafka.apache.org/downloads.html下载kafka2.1.2
+        - 2）打开config目录下的server.properties， 修改log.dirs为D:\kafka_logs,修改advertised.host.name=服务器ip
+        - 3）启动kafka ./bin/windows/kafka-server-start.bat ./config/server.preperties
+
+- 9.log agent设计
+
+    ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(10).png?raw=true) 
+- 10.log agent流程
+
+    ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(11).png?raw=true) 
+
+
+
+<a id=11-2>Day-11.2 日志客户端开发</a>
+- 11.kafka示例代码
+
+```
+
+```
+
+
+
+
+
+

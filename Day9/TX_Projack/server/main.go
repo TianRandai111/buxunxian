@@ -170,3 +170,19 @@ func main() {
 		}
 	}
 }
+
+
+
+
+升级完毕：
+	新部署服务
+	policyManageDispatch
+		reg.enncloud.cn/fnw/policymanagedispatch:20190124.170255.85  
+
+	升级服务
+	PolicyManage
+		reg.enncloud.cn/fnw/policymanage:20190124.170238.46   升级镜像
+		reg.enncloud.cn/fnw/policymanage：20180816.141853.32  原镜像
+
+
+
