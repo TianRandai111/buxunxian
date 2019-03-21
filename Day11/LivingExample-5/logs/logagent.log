@@ -1,0 +1,2 @@
+2019/03/21 16:52:18.542 [D]  load conf succ , config : &{debug ../logs/logagent.log [{/var/log/nginx/access.log nginx_log}] 100} appConfig
+2019/03/21 16:52:18.542 [D]  initialize succ

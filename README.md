@@ -2471,21 +2471,77 @@ Golang的主要涉及目标之一就是面向大规模后端服务程序，网�
 - 9.log agent设计
 
     ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(10).png?raw=true) 
+
 - 10.log agent流程
 
     ![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-10/1%20(11).png?raw=true) 
 
-
-
-<a id=11-2>Day-11.2 日志客户端开发</a>
 - 11.kafka示例代码
 
+对接kafka包`go get github.com/Shopify/sarama`
+
+>[代码位置: Day11/LivingExample-1/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day11/LivingExample-1/main.go)
+
+tail包实现tail -f功能`go get github.com/hpcloud/tail`
+
+>[代码位置: Day11/LivingExample-2/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day11/LivingExample-2/main.go)
+    
+配置文件包
+`go get github.com/astaxie/beego/config`
+
+>[代码位置: Day11/LivingExample-3/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day11/LivingExample-3/main.go)
+
+```go
+String(key string) string
+Int(key string) (int, error)
+Int64(key string) (int64, error)
+Bool(key string) (bool, error)
+Float(key string) (float64, error)
+```
+
+![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-11/1.jpg?raw=true) 
+
+![image](https://github.com/TianRandai111/Projact_Image/blob/master/golang/LivingExample-11/2.png?raw=true) 
+
+```go
+iniconf, err := config.NewConfig("ini", "testini.conf")
+if err != nil {
+    t.Fatal(err)
+}
+```
+
+
+日志库
+`go get github.com/astaxie/beego/logs`
+
+<a id=11-2>Day-11.2 日志客户端开发</a>
+
+- 1. 配置log组件
+
+```go
+     config := make(map[string]interface{})
+	config["filename"] = "./logs/logcollect.log"
+	config["level"] = logs.LevelDebug
+
+	configStr, err := json.Marshal(config)
+	if err != nil {
+		fmt.Println("marshal failed, err:", err)
+		return
+	}
+
+```
+
+- 2. 初始化日志组件
+
+```go
+logs.SetLogger(“file”, string(configStr))
+```
+
+>[代码位置: Day11/LivingExample-11/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-11/Logs)
+
 ```
 
 ```
 
 
-
-
-
-
+     
