@@ -1,0 +1,250 @@
+2019/04/17 17:38:09.442 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:23 version:17 value:"[{\"LogPath\":\"/var/log/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/var/log/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/04/17 17:38:09.442 [D]  test logs config is [{/var/log/nginx/access.log nginx_log} {/var/log/nginx/error.log nginx_log_err}]
+2019/04/17 17:38:09.456 [D]  resp from etcd:[]
+2019/04/17 17:38:09.457 [D]  initialize etcd succ
+2019/04/17 17:38:09.487 [D]  init kafka succ
+2019/04/17 17:38:09.487 [D]  initialize kafka succ
+2019/04/17 17:38:09.487 [D]  read msg:This is test err measseg,topic:nginx_log_err
+2019/04/17 17:38:09.518 [D]  read msg:This is test measseg,topic:nginx_log
+2019/04/17 17:38:09.533 [D]  read msg:123123123,topic:nginx_log
+2019/04/17 17:40:17.167 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:26 version:20 value:"[{\"LogPath\":\"/var/log/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/var/log/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/04/17 17:40:17.167 [D]  test logs config is [{/var/log/nginx/access.log nginx_log} {/var/log/nginx/error.log nginx_log_err}]
+2019/04/17 17:40:17.181 [D]  resp from etcd:[]
+2019/04/17 17:40:17.181 [D]  initialize etcd succ
+2019/04/17 17:40:17.214 [D]  init kafka succ
+2019/04/17 17:40:17.214 [D]  initialize kafka succ
+2019/04/17 17:40:17.214 [D]  read msg:This is test measseg,topic:nginx_log
+2019/04/17 17:40:17.243 [D]  read msg:123123123,topic:nginx_log
+2019/04/17 17:40:17.257 [D]  read msg:This is test err measseg,topic:nginx_log_err
+2019/04/19 14:02:43.312 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:27 version:21 value:"[{\"LogPath\":\"/tmp/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/tmp/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/04/19 14:02:43.312 [D]  test logs config is [{/tmp/nginx/access.log nginx_log} {/tmp/nginx/error.log nginx_log_err}]
+2019/04/19 14:02:43.312 [D]  initialize etcd succ
+2019/04/19 14:02:43.544 [D]  init kafka succ
+2019/04/19 14:02:43.544 [D]  initialize kafka succ
+2019/04/19 14:36:59.866 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:27 version:21 value:"[{\"LogPath\":\"/tmp/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/tmp/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/04/19 14:36:59.866 [D]  test logs config is [{/tmp/nginx/access.log nginx_log} {/tmp/nginx/error.log nginx_log_err}]
+2019/04/19 14:36:59.882 [D]  resp from etcd:[]
+2019/04/19 14:36:59.882 [D]  initialize etcd succ
+2019/04/19 14:36:59.912 [D]  init kafka succ
+2019/04/19 14:36:59.912 [D]  initialize kafka succ
+2019/04/19 14:39:40.672 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:40 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:40.923 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:40 +0000] "GET /nginx-logo.png HTTP/1.1" 200 368 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:40.943 [D]  read msg:2019/04/19 06:39:40 [error] 30#0: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/",topic:nginx_log_err
+2019/04/19 14:39:40.959 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:40 +0000] "GET /poweredby.png HTTP/1.1" 200 2811 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:40.975 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:40 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:41.677 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:41 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:42.430 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:42 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:43.683 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:43 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:44.185 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:44 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:44.687 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:44 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 14:39:45.187 [D]  read msg:10.4.82.79 - - [19/Apr/2019:06:39:45 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/19 17:17:52.307 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:52 +0000] "GET / HTTP/1.1" 200 3700 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:52.558 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:52 +0000] "GET / HTTP/1.1" 200 3700 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:53.562 [D]  read msg:2019/04/19 09:17:53 [error] 32#0: *6 open() "/usr/share/nginx/html/phpmyadmin" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //phpmyadmin HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:53.578 [D]  read msg:2019/04/19 09:17:53 [error] 30#0: *7 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //robots.txt HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:53.626 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:53 +0000] "GET //phpmyadmin HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:53.651 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:53 +0000] "GET //robots.txt HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:53.667 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:53 +0000] "GET //data/admin/ver.txt HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:53.683 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:53 +0000] "GET //data/admin/verifies.txt HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:53.699 [D]  read msg:2019/04/19 09:17:53 [error] 30#0: *8 open() "/usr/share/nginx/html/data/admin/ver.txt" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //data/admin/ver.txt HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:53.717 [D]  read msg:2019/04/19 09:17:53 [error] 31#0: *9 open() "/usr/share/nginx/html/data/admin/verifies.txt" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //data/admin/verifies.txt HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:53.744 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:53 +0000] "GET //license.txt HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:53.765 [D]  read msg:2019/04/19 09:17:53 [error] 31#0: *10 open() "/usr/share/nginx/html/license.txt" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //license.txt HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:54.567 [D]  read msg:2019/04/19 09:17:54 [error] 30#0: *11 open() "/usr/share/nginx/html/readme.txt" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //readme.txt HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:54.583 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:54 +0000] "GET //readme.txt HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:54.600 [D]  read msg:2019/04/19 09:17:54 [error] 30#0: *12 open() "/usr/share/nginx/html/help.txt" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //help.txt HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:54.616 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:54 +0000] "GET //help.txt HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:17:54.631 [D]  read msg:2019/04/19 09:17:54 [error] 30#0: *13 open() "/usr/share/nginx/html/readme.html" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //readme.html HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:17:54.652 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:17:54 +0000] "GET //readme.html HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:01.597 [D]  read msg:2019/04/19 09:18:01 [error] 31#0: *14 open() "/usr/share/nginx/html/wp-admin/css/colors-classic.css" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //wp-admin/css/colors-classic.css HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:01.629 [D]  read msg:2019/04/19 09:18:01 [error] 30#0: *15 open() "/usr/share/nginx/html/wp-admin/js/media-upload.dev.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //wp-admin/js/media-upload.dev.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:01.645 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:01 +0000] "GET //wp-admin/css/colors-classic.css HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:01.662 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:01 +0000] "GET //wp-admin/js/media-upload.dev.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:04.604 [D]  read msg:2019/04/19 09:18:04 [error] 31#0: *16 open() "/usr/share/nginx/html/wp-content/plugins/akismet/akismet.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //wp-content/plugins/akismet/akismet.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:04.619 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:04 +0000] "GET //wp-content/plugins/akismet/akismet.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:05.610 [D]  read msg:2019/04/19 09:18:05 [error] 30#0: *17 open() "/usr/share/nginx/html/wp-content/themes/classic/rtl.css" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //wp-content/themes/classic/rtl.css HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:05.625 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:05 +0000] "GET //wp-content/themes/classic/rtl.css HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:05.641 [D]  read msg:2019/04/19 09:18:05 [error] 30#0: *18 open() "/usr/share/nginx/html/wp-includes/css/buttons.css" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //wp-includes/css/buttons.css HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:05.659 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:05 +0000] "GET //wp-includes/css/buttons.css HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:06.614 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:06 +0000] "GET //SCRIPT/common.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:06.631 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:06 +0000] "GET //Ads/left.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:06.668 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:06 +0000] "GET //Css/Style.css HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:06.696 [D]  read msg:2019/04/19 09:18:06 [error] 30#0: *19 open() "/usr/share/nginx/html/SCRIPT/common.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //SCRIPT/common.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:06.711 [D]  read msg:2019/04/19 09:18:06 [error] 30#0: *20 open() "/usr/share/nginx/html/Ads/left.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //Ads/left.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:06.727 [D]  read msg:2019/04/19 09:18:06 [error] 31#0: *21 open() "/usr/share/nginx/html/Css/Style.css" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //Css/Style.css HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:07.615 [D]  read msg:2019/04/19 09:18:07 [error] 31#0: *22 open() "/usr/share/nginx/html/Images/ad.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //Images/ad.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:07.630 [D]  read msg:2019/04/19 09:18:07 [error] 30#0: *23 open() "/usr/share/nginx/html/Script/Html.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //Script/Html.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:07.646 [D]  read msg:2019/04/19 09:18:07 [error] 30#0: *24 open() "/usr/share/nginx/html/SiteFiles/Inner/Register/script.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //SiteFiles/Inner/Register/script.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:07.661 [D]  read msg:2019/04/19 09:18:07 [error] 31#0: *25 open() "/usr/share/nginx/html/License/index.php" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //License/index.php HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:07.678 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:07 +0000] "GET //Images/ad.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:07.711 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:07 +0000] "GET //Script/Html.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:07.726 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:07 +0000] "GET //SiteFiles/Inner/Register/script.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:07.740 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:07 +0000] "GET //License/index.php HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.618 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET //wcm/app/login.jsp HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.633 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET //help/ HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.647 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET //help/io_login.html HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.662 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET / HTTP/1.1" 200 3700 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.676 [D]  read msg:2019/04/19 09:18:08 [error] 31#0: *26 open() "/usr/share/nginx/html/wcm/app/login.jsp" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //wcm/app/login.jsp HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.691 [D]  read msg:2019/04/19 09:18:08 [error] 30#0: *27 "/usr/share/nginx/html/help/index.html" is not found (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //help/ HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.705 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET /jboss.css HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.720 [D]  read msg:2019/04/19 09:18:08 [error] 31#0: *28 open() "/usr/share/nginx/html/help/io_login.html" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET //help/io_login.html HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.735 [D]  read msg:2019/04/19 09:18:08 [error] 31#0: *30 open() "/usr/share/nginx/html/jboss.css" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET /jboss.css HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.868 [D]  read msg:2019/04/19 09:18:08 [error] 30#0: *31 open() "/usr/share/nginx/html/is_test" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET /is_test HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.889 [D]  read msg:2019/04/19 09:18:08 [error] 30#0: *32 open() "/usr/share/nginx/html/axis2" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET /axis2 HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.905 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET /is_test HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.922 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET /axis2 HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:08.941 [D]  read msg:2019/04/19 09:18:08 [error] 30#0: *33 open() "/usr/share/nginx/html/console/css/login.css" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET /console/css/login.css HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:08.956 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:08 +0000] "GET /console/css/login.css HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:09.871 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:09 +0000] "GET /resource/js/cj.js HTTP/1.1" 404 3650 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/19 17:18:09.887 [D]  read msg:2019/04/19 09:18:09 [error] 30#0: *34 open() "/usr/share/nginx/html/resource/js/cj.js" failed (2: No such file or directory), client: 10.4.84.71, server: _, request: "GET /resource/js/cj.js HTTP/1.1", host: "10.4.82.60:80",topic:nginx_log_err
+2019/04/19 17:18:10.875 [D]  read msg:10.4.84.71 - - [19/Apr/2019:09:18:10 +0000] "GET / HTTP/1.1" 200 3700 "-" "Python-urllib/2.7" "-",topic:nginx_log
+2019/04/30 09:40:12.209 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:27 version:21 value:"[{\"LogPath\":\"/tmp/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/tmp/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/04/30 09:40:12.209 [D]  test logs config is [{/tmp/nginx/access.log nginx_log} {/tmp/nginx/error.log nginx_log_err}]
+2019/04/30 09:40:12.209 [D]  initialize etcd succ
+2019/04/30 09:40:12.707 [D]  init kafka succ
+2019/04/30 09:40:12.707 [D]  initialize kafka succ
+2019/04/30 09:41:39.757 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:41:39 +0000] "GET / HTTP/1.1" 200 3700 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:41:40.294 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:41:39 +0000] "GET /nginx-logo.png HTTP/1.1" 200 368 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:41:40.437 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:41:39 +0000] "GET /poweredby.png HTTP/1.1" 200 2811 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:41:40.452 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:41:39 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:41:40.468 [D]  read msg:2019/04/30 01:41:39 [error] 31#0: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/",topic:nginx_log_err
+2019/04/30 09:41:40.508 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:41:40 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:41:40.759 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:41:40 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:26.253 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:26 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:26.754 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:26 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:29.008 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:28 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:29.509 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:29 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:29.759 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:29 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:29.775 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:29 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:30.010 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:29 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:45:30.260 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:45:30 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:49:12.587 [D]  PUT "/logagent/config/10.4.82.60" :"[{\"LogPath\":\"/var/log/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/var/log/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]"
+
+2019/04/30 09:49:12.588 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:49:12.604 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:49:12.619 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:49:12.634 [D]  read msg:this is nginx accesslog,topic:nginx_log
+2019/04/30 09:49:12.663 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:49:12.678 [D]  read msg:this is nginx accesslog,topic:nginx_log
+2019/04/30 09:49:56.369 [D]  PUT "/logagent/config/10.4.82.60" :"[{\"LogPath\":\"/tmp/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/tmp/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]"
+
+2019/04/30 09:49:56.369 [D]  read msg:2019/04/30 01:41:39 [error] 31#0: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/",topic:nginx_log_err
+2019/04/30 09:50:01.483 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:50:01 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:50:02.235 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:50:02 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:50:02.986 [D]  read msg:10.4.82.79 - - [30/Apr/2019:01:50:02 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 09:50:17.180 [D]  PUT "/logagent/config/10.4.82.60" :"[{\"LogPath\":\"/var/log/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/var/log/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]"
+
+2019/04/30 09:50:17.180 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:50:17.194 [D]  read msg:this is nginx accesslog,topic:nginx_log
+2019/04/30 09:50:17.209 [D]  read msg:this is nginx accesslog,topic:nginx_log
+2019/04/30 09:50:17.224 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:50:17.242 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:50:17.257 [D]  read msg:this is nginx errorlog,topic:nginx_log_err
+2019/04/30 09:50:33.970 [D]  read msg:111,topic:nginx_log
+2019/04/30 09:50:33.984 [D]  read msg:111,topic:nginx_log
+2019/04/30 09:50:34.028 [D]  read msg:111,topic:nginx_log
+2019/04/30 09:50:34.043 [D]  read msg:111,topic:nginx_log
+2019/04/30 10:02:56.205 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:02:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:02:58.210 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:02:58 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:00.468 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:00 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:01.220 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:01 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:01.971 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:01 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:02.472 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:02 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:03.474 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:03 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:08.487 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:08 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:09.490 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:09 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:10.241 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:10 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:10.992 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:10 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:11.494 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:11 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/04/30 10:03:12.499 [D]  read msg:10.4.82.79 - - [30/Apr/2019:02:03:12 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:53:03.781 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:30 version:24 value:"[{\"LogPath\":\"/var/log/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/var/log/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/05/09 20:53:03.781 [D]  test logs config is [{/var/log/nginx/access.log nginx_log} {/var/log/nginx/error.log nginx_log_err}]
+2019/05/09 20:53:03.804 [D]  resp from etcd:[]
+2019/05/09 20:53:03.804 [D]  initialize etcd succ
+2019/05/09 20:53:03.834 [D]  init kafka succ
+2019/05/09 20:53:03.834 [D]  initialize kafka succ
+2019/05/09 20:54:21.599 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:31 version:25 value:"[{\"LogPath\":\"/tmp/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/tmp/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/05/09 20:54:21.599 [D]  test logs config is [{/tmp/nginx/access.log nginx_log} {/tmp/nginx/error.log nginx_log_err}]
+2019/05/09 20:54:21.613 [D]  resp from etcd:[]
+2019/05/09 20:54:21.613 [D]  initialize etcd succ
+2019/05/09 20:54:21.649 [D]  init kafka succ
+2019/05/09 20:54:21.649 [D]  initialize kafka succ
+2019/05/09 20:54:21.649 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET / HTTP/1.1" 200 3700 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.816 [D]  read msg:2019/05/09 12:50:18 [error] 20#0: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/",topic:nginx_log_err
+2019/05/09 20:54:21.831 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /nginx-logo.png HTTP/1.1" 200 368 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.845 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /poweredby.png HTTP/1.1" 200 2811 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.860 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.874 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:19 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.896 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:19 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.911 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.926 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.955 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.970 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:54:21.985 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:21 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:55:19.569 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:19 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:55:20.322 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:55:20.824 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:55:21.828 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:21 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:55:22.330 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:22 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:58:47.113 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:46 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:58:47.615 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:58:47.869 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:58:48.120 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:48 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:23.536 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:23 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:24.788 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:24 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:25.289 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:25.539 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:25.791 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:25.808 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/09 20:59:26.043 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.815 [D]  resp from etcd:[key:"/logagent/config/10.4.82.60" create_revision:7 mod_revision:31 version:25 value:"[{\"LogPath\":\"/tmp/nginx/access.log\",\"Topic\":\"nginx_log\"},{\"LogPath\":\"/tmp/nginx/error.log\",\"Topic\":\"nginx_log_err\"}]" ]
+2019/05/10 10:13:31.815 [D]  test logs config is [{/tmp/nginx/access.log nginx_log} {/tmp/nginx/error.log nginx_log_err}]
+2019/05/10 10:13:31.829 [D]  resp from etcd:[]
+2019/05/10 10:13:31.829 [D]  initialize etcd succ
+2019/05/10 10:13:31.862 [D]  init kafka succ
+2019/05/10 10:13:31.862 [D]  initialize kafka succ
+2019/05/10 10:13:31.862 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET / HTTP/1.1" 200 3700 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.892 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /nginx-logo.png HTTP/1.1" 200 368 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.909 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /poweredby.png HTTP/1.1" 200 2811 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.937 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.953 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:19 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.967 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:19 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:31.986 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.000 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.014 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.029 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.044 [D]  read msg:10.4.82.79 - - [09/May/2019:12:50:21 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.059 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:19 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.073 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.087 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:20 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.101 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:21 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.115 [D]  read msg:10.4.82.79 - - [09/May/2019:12:55:22 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.130 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:46 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.145 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.160 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.175 [D]  read msg:10.4.82.79 - - [09/May/2019:12:58:48 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.191 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:23 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.206 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:24 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.221 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.236 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.254 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.268 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.285 [D]  read msg:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:13:32.300 [D]  read msg:2019/05/09 12:50:18 [error] 20#0: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/",topic:nginx_log_err
+2019/05/10 10:20:12.190 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:11 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:12.209 [D]  read msg:2019/05/10 02:20:11 [error] 21#0: *8 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/",topic:nginx_log_err
+2019/05/10 10:20:12.943 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:12 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:14.950 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:14 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:14.966 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:14 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:15.466 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:15.485 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:15.717 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:20:15.967 [D]  read msg:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:55.591 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:55.842 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:56.103 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:56.123 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:56.354 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:56.604 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:56.622 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log
+2019/05/10 10:30:56.856 [D]  read msg:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-",topic:nginx_log

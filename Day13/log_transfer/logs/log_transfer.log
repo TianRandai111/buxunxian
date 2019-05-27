@@ -1,0 +1,78 @@
+2019/05/10 10:13:31.892 [D]  Partition:0, Offset:1182, Key:, Value:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET / HTTP/1.1" 200 3700 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:13:31.909 [D]  Partition:0, Offset:1183, Key:, Value:10.4.82.79 - - [09/May/2019:12:50:18 +0000] "GET /nginx-logo.png HTTP/1.1" 200 368 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:19:57.841 [D]  This is test logs
+2019/05/10 10:19:58.215 [D]  This is test kafka
+2019/05/10 10:19:58.292 [D]  This is test es
+2019/05/10 10:20:12.209 [D]  Partition:0, Offset:1210, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:11 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:12.225 [D]  Partition:0, Offset:1211, Key:, Value:2019/05/10 02:20:11 [error] 21#0: *8 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/"
+
+2019/05/10 10:20:12.959 [D]  Partition:0, Offset:1212, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:12 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:14.969 [D]  Partition:0, Offset:1213, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:14 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:14.985 [D]  Partition:0, Offset:1214, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:14 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:15.487 [D]  Partition:0, Offset:1215, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:15.503 [D]  Partition:0, Offset:1216, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:15.736 [D]  Partition:0, Offset:1217, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:15.986 [D]  Partition:0, Offset:1218, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:46.991 [D]  Partition:0, Offset:1219, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:11 +0000] "GET /favicon.ico HTTP/1.1" 404 3650 "http://10.4.82.60/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.009 [D]  Partition:0, Offset:1220, Key:, Value:2019/05/10 02:20:11 [error] 21#0: *8 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.4.82.79, server: _, request: "GET /favicon.ico HTTP/1.1", host: "10.4.82.60", referrer: "http://10.4.82.60/"
+
+2019/05/10 10:20:47.026 [D]  Partition:0, Offset:1221, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:12 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.052 [D]  Partition:0, Offset:1222, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:14 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.073 [D]  Partition:0, Offset:1223, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:14 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.089 [D]  Partition:0, Offset:1224, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.104 [D]  Partition:0, Offset:1225, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.119 [D]  Partition:0, Offset:1226, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:20:47.137 [D]  Partition:0, Offset:1227, Key:, Value:10.4.82.79 - - [10/May/2019:02:20:15 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:48.542 [D]  This is test logs
+2019/05/10 10:30:49.054 [D]  This is test kafka
+2019/05/10 10:30:49.134 [D]  This is test es
+2019/05/10 10:30:55.690 [D]  Partition:0, Offset:1228, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.457 [D]  Partition:0, Offset:1229, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.503 [D]  Partition:0, Offset:1230, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.617 [D]  Partition:0, Offset:1231, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.638 [D]  Partition:0, Offset:1232, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.662 [D]  Partition:0, Offset:1233, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:55 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.683 [D]  Partition:0, Offset:1234, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.702 [D]  Partition:0, Offset:1235, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.723 [D]  Partition:0, Offset:1236, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.745 [D]  Partition:0, Offset:1237, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.766 [D]  Partition:0, Offset:1238, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.787 [D]  Partition:0, Offset:1239, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.807 [D]  Partition:0, Offset:1240, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.828 [D]  Partition:0, Offset:1241, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.879 [D]  Partition:0, Offset:1242, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/10 10:30:56.945 [D]  Partition:0, Offset:1243, Key:, Value:10.4.82.79 - - [10/May/2019:02:30:56 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+

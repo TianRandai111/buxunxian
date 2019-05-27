@@ -3,11 +3,15 @@ package main
 import (
 	"fmt"
 
+	"github.com/TianRandai111/buxunxian/Day11/LivingExample-5/kafka"
+
 	"github.com/TianRandai111/buxunxian/Day11/LivingExample-5/tailf"
 	"github.com/astaxie/beego/logs"
 )
 
 func main() {
+	InitIp()
+
 	filename := "../conf/config"
 	err := loadConf("ini", filename)
 	if err != nil {
@@ -15,6 +19,7 @@ func main() {
 		panic("load conf failed")
 		return
 	}
+	logs.Debug("load conf succ , config : %v appConfig", appConfig)
 
 	err = initLogger()
 	if err != nil {
@@ -23,15 +28,27 @@ func main() {
 		return
 	}
 
-	logs.Debug("load conf succ , config : %v appConfig", appConfig)
+	collectConf, err := InitEtcd(appConfig.Etcdaddr, appConfig.etcdKey)
+	if err != nil {
+		logs.Error("init etcd failed err : %v ", err)
+		return
+	}
 
-	err = tailf.InitTail(appConfig.CollectConf, appConfig.Chan_Size)
+	logs.Debug("initialize etcd succ")
+
+	err = tailf.InitTail(collectConf, appConfig.Chan_Size)
 	if err != nil {
 		logs.Error("init tail failed err : %v ", err)
 		return
 	}
 
-	logs.Debug("initialize succ")
+	err = kafka.Initkafka(appConfig.KafkaAddr)
+	if err != nil {
+		logs.Error("init kafka failed err : %v ", err)
+		return
+	}
+	logs.Debug("initialize kafka succ")
+
 	/* 	go func() {
 		var count int
 		for {
@@ -46,4 +63,5 @@ func main() {
 		return
 	}
 	logs.Info("Program exited")
+	logs.Debug("initialize succ")
 }

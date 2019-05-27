@@ -1,0 +1,80 @@
+2019/05/09 19:51:43.586 [D]  This is test logs
+2019/05/09 20:17:51.215 [D]  This is test logs
+2019/05/09 20:32:01.444 [D]  This is test logs
+2019/05/09 20:32:02.132 [D]  This is test kafka
+2019/05/09 20:32:07.230 [E]  init es failed,no Elasticsearch node available
+2019/05/09 20:33:50.413 [D]  This is test logs
+2019/05/09 20:33:51.066 [D]  This is test kafka
+2019/05/09 20:33:56.072 [E]  init es failed,no Elasticsearch node available
+2019/05/09 20:34:32.011 [D]  This is test logs
+2019/05/09 20:34:32.545 [D]  This is test kafka
+2019/05/09 20:34:37.547 [E]  init es failed,no Elasticsearch node available
+2019/05/09 20:35:11.924 [D]  This is test logs
+2019/05/09 20:35:12.700 [D]  This is test kafka
+2019/05/09 20:35:17.783 [E]  init es failed,no Elasticsearch node available
+2019/05/09 20:37:56.493 [D]  This is test logs
+2019/05/09 20:37:57.233 [D]  This is test kafka
+2019/05/09 20:37:57.312 [D]  This is test es
+2019/05/09 20:47:52.078 [D]  This is test logs
+2019/05/09 20:47:52.786 [D]  This is test kafka
+2019/05/09 20:47:52.865 [D]  This is test es
+2019/05/09 20:47:53.095 [W]  waring,log_transfer is exited
+2019/05/09 20:48:20.345 [D]  This is test logs
+2019/05/09 20:48:21.098 [D]  This is test kafka
+2019/05/09 20:48:21.172 [D]  This is test es
+2019/05/09 20:48:21.241 [W]  waring,log_transfer is exited
+2019/05/09 20:48:36.223 [D]  This is test logs
+2019/05/09 20:48:36.992 [D]  This is test kafka
+2019/05/09 20:48:37.068 [D]  This is test es
+2019/05/09 20:48:37.125 [W]  waring,log_transfer is exited
+2019/05/09 20:48:56.799 [D]  This is test logs
+2019/05/09 20:48:57.579 [D]  This is test kafka
+2019/05/09 20:48:57.655 [D]  This is test es
+2019/05/09 20:48:57.715 [W]  waring,log_transfer is exited
+2019/05/09 20:50:26.912 [D]  This is test logs
+2019/05/09 20:50:27.445 [D]  This is test kafka
+2019/05/09 20:50:27.520 [D]  This is test es
+2019/05/09 20:50:27.570 [W]  waring,log_transfer is exited
+2019/05/09 20:52:11.090 [D]  This is test logs
+2019/05/09 20:52:11.565 [D]  This is test kafka
+2019/05/09 20:52:11.641 [D]  This is test es
+2019/05/09 20:52:11.686 [D]  1111
+2019/05/09 20:52:11.686 [W]  waring,log_transfer is exited
+2019/05/09 20:55:29.979 [D]  This is test logs
+2019/05/09 20:55:30.498 [D]  This is test kafka
+2019/05/09 20:55:30.572 [D]  This is test es
+2019/05/09 20:55:30.616 [D]  1111
+2019/05/09 20:55:30.616 [W]  waring,log_transfer is exited
+2019/05/09 20:58:12.423 [D]  This is test logs
+2019/05/09 20:58:12.896 [D]  This is test kafka
+2019/05/09 20:58:12.973 [D]  This is test es
+2019/05/09 20:58:13.016 [D]  1111
+2019/05/09 20:58:13.016 [W]  waring,log_transfer is exited
+2019/05/09 20:58:21.313 [D]  This is test logs
+2019/05/09 20:58:22.046 [D]  This is test kafka
+2019/05/09 20:58:22.123 [D]  This is test es
+2019/05/09 20:58:47.470 [D]  Partition:0, Offset:1171, Key:, Value:10.4.82.79 - - [09/May/2019:12:58:46 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:58:47.632 [D]  Partition:0, Offset:1172, Key:, Value:10.4.82.79 - - [09/May/2019:12:58:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:58:47.886 [D]  Partition:0, Offset:1173, Key:, Value:10.4.82.79 - - [09/May/2019:12:58:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:58:48.136 [D]  Partition:0, Offset:1174, Key:, Value:10.4.82.79 - - [09/May/2019:12:58:48 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:19.233 [D]  This is test logs
+2019/05/09 20:59:19.914 [D]  This is test kafka
+2019/05/09 20:59:19.990 [D]  This is test es
+2019/05/09 20:59:23.570 [D]  Partition:0, Offset:1175, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:23 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:24.863 [D]  Partition:0, Offset:1176, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:24 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:25.308 [D]  Partition:0, Offset:1177, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:25.554 [D]  Partition:0, Offset:1178, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:25.808 [D]  Partition:0, Offset:1179, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:25.824 [D]  Partition:0, Offset:1180, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+
+2019/05/09 20:59:26.059 [D]  Partition:0, Offset:1181, Key:, Value:10.4.82.79 - - [09/May/2019:12:59:25 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36" "-"
+

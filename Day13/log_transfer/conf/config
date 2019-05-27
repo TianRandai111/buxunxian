@@ -1,0 +1,10 @@
+[logs]
+log_level = "debug"
+log_path = "./logs/log_transfer.log"
+
+[kafka]
+kafka_addr = "10.39.6.202:9092"
+topic = nginx_log
+
+[ES]
+ES_addr = http://10.39.6.202:9200/

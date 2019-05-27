@@ -19,7 +19,8 @@ func convertLogLevel(level string) int {
 	case "trace":
 		return logs.LevelTrace
 	}
-	return convertLogLevel(appConfig.LogLevel)
+	//return convertLogLevel(appConfig.LogLevel)
+	return logs.LevelDebug
 }
 
 func initLogger() (err error) {

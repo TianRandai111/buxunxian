@@ -2531,17 +2531,40 @@ if err != nil {
 
 ```
 
-- 2. 初始化日志组件
 
-```go
-logs.SetLogger(“file”, string(configStr))
+
+
+配置etcd
+```golang
+gopm get -g "github.com/coreos/etcd/clientv3"
 ```
-
->[代码位置: Day11/LivingExample-11/client/main.go](https://github.com/TianRandai111/buxunxian/blob/master/Day10/LivingExample-11/Logs)
-
-```
-
-```
-
-
      
+
+配置 elasticsearch
+
+```golang
+go get "gopkg.in/olivere/elastic.v2"
+```
+
+
+Mysql事物
+```golang
+_ "github.com/go-sql-driver/mysql" //数据库驱动
+"github.com/jmoiron/sqlx" 
+2)  Db.Begin()开始事务
+
+3)  Db.Submit()提交事务
+
+4)  Db.Rollback() 回滚事务
+
+```
+
+
+huanghua-airport_energy-integration 
+
+
+beego web开发
+- 1) 规划好url
+- 2) 添加路由
+- 3) 开发controller，集成beego.Controller
+- 4) 测试

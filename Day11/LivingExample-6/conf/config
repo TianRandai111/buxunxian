@@ -1,0 +1,15 @@
+[server]
+listen_ip = "0.0.0.0"
+listen_port = 8080
+
+[logs]
+log_level = debug
+log_path = ../logs/logagent.log
+
+[collect]
+agent_path = /var/log/nginx/access.log
+topic = nginx_log
+chan_size = 100
+
+[kafka]
+server_addr = 10.39.6.202:9092
