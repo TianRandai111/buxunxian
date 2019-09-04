@@ -33,6 +33,7 @@ func init() {
 
 func main() {
 	r, err := DB.Exec("insert into person(user_name,sex,email)values(?,?,?)", "stu002", "man", "stu002@qq.com")
+
 	if err != nil {
 		fmt.Println("插入数据出错", err)
 		return

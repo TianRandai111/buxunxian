@@ -33,7 +33,7 @@ func init() {
 
 func main() {
 	var person []Person
-	err := DB.Select(&person, "select user_id,user_name,sex,email where user_id = ?", 1)
+	err := DB.Select(&person, "select user_id,user_name,sex,email  where user_id = ?", 1)
 	if err != nil {
 		fmt.Println("插入数据出错", err)
 		return
