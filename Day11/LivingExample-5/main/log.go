@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: 步荀仙
+ * @Date: 2019-03-12 16:07:14
+ * @LastEditors: 步荀仙
+ * @LastEditTime: 2019-03-12 16:07:14
+ */
 package main
 
 import (
@@ -26,7 +34,7 @@ func convertLogLevel(level string) int {
 func initLogger() (err error) {
 	config := make(map[string]interface{})
 	config["filename"] = appConfig.LogPath
-	config["level"] = logs.LevelDebug
+	config["level"] = convertLogLevel
 
 	configStr, err := json.Marshal(config)
 	if err != nil {

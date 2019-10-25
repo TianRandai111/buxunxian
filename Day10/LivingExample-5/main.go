@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: 步荀仙
+ * @Date: 2019-01-17 18:20:58
+ * @LastEditors: 步荀仙
+ * @LastEditTime: 2019-09-20 14:43:58
+ */
 package main
 
 import (
@@ -46,6 +54,7 @@ func main() {
 	//初始化模板
 	initTemplat("/opt/gx/go/src/github.com/TianRandai111/buxunxian/Day10/LivingExample-5/index.html")
 	http.HandleFunc("/user/info", simpleServer)
+	http.Handle()
 	if err := http.ListenAndServe(":8088", nil); err != nil {
 		fmt.Println("http listen failed")
 	}
